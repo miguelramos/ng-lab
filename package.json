@@ -25,7 +25,9 @@
     "workspace-schematic": "./node_modules/.bin/nx workspace-schematic",
     "dep-graph": "./node_modules/.bin/nx dep-graph",
     "help": "./node_modules/.bin/nx help",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "travis-deploy-once": "travis-deploy-once --pro",
+    "semantic-release": "semantic-release"
   },
   "private": true,
   "dependencies": {
@@ -78,6 +80,7 @@
     "prettier": "1.15.2",
     "protractor": "~5.4.0",
     "semantic-release": "^15.13.3",
+    "travis-deploy-once": "^5.0.11",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.29.0",
     "tslib": "^1.9.0",
@@ -96,7 +99,6 @@
     }
   },
   "release": {
-    "pkgRoot": "dist/apps/ng-lab",
-    "support": "dist/libs/support"
+    "branch": "master"
   }
 }

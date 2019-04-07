@@ -8,9 +8,10 @@ install:
 cache:
   directories:
   - $HOME/.npm
-script:
-- npm run lint
-- npm run test
+#script:
+#- npm run lint
+#- npm run test
+#- npm run build
 
 #deploy:
 #  provider: pages
@@ -20,10 +21,22 @@ script:
 #  local-dir: dist/ng-lab
 #  on:
 #    branch: master
+stages:
+  - linting
+  - testing
+  - building
 
 git:
   depth: 3
 
+jobs:
+  include:
+    - stage: linting
+      script: npm run lint
+    - stage: testing
+      script: npm run test
+    - stage: building
+      script: npm run build
 #after_success:
 #  - npm run travis-deploy-once "npm run semantic-release"
 
