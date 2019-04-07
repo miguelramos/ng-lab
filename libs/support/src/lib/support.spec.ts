@@ -1,4 +1,4 @@
-import { uniqueID, between } from "./support";
+import { uniqueID, between, getUrlHostname } from "./support";
 
 describe('> Support helper functions.', () => {
   it('# Should create a valid UUID V4.', () => {
@@ -13,5 +13,10 @@ describe('> Support helper functions.', () => {
     expect(between(1, 2, 4, false)).toBeFalsy();
 
     expect(between(3, 1, 3, true)).toBeTruthy();
+  });
+
+  it('# Should get hostname from url.', () => {
+    expect(getUrlHostname('http://www.ng-lab.com/hostname')).toEqual('www.ng-lab.com');
+    expect(getUrlHostname('https://www.ng-lab.com/hostname?foo=bar')).toEqual('www.ng-lab.com');
   });
 });
