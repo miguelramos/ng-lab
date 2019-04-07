@@ -6,11 +6,16 @@
 * found in the LICENSE file at https://www.ng-lab.com/license
 */
 
+interface EventHubInterface {
+  hub: { key: [(param: any) => void] };
+  emit: (event: string, data: any) => void;
+  on: (event: string, fn: (param: any) => void) => void;
+  off: (event: string, fn: Function) => void;
+  destroy: () => void;
+}
+
 /**
  * Create unique UUID
- *
- * @export
- * @returns string
  */
 export function uniqueID(): string {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -22,13 +27,6 @@ export function uniqueID(): string {
 
 /**
  * Function to check if a number is between interval
- *
- * @export
- * @param {number} num
- * @param {number} min
- * @param {number} max
- * @param {boolean} [inclusive=true]
- * @returns {boolean}
  */
 export function between(
   num: number,
@@ -46,10 +44,6 @@ export function between(
 
 /**
  * Get the hostname/domain from a url.
- *
- * @export
- * @param {string} url
- * @returns {string}
  */
 export function getUrlHostname(url: string): string {
   let hostname = '';
@@ -65,6 +59,9 @@ export function getUrlHostname(url: string): string {
   return hostname;
 }
 
+/**
+ * Function to check if parameter is a valid number
+ */
 export function isValidNumber(n: any): boolean {
   return !isNaN(parseFloat(n)) && isFinite(n) && Number(n) === n;
 }
