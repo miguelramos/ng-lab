@@ -64,3 +64,7 @@ export function getUrlHostname(url: string): string {
 
   return hostname;
 }
+
+export function isValidNumber(n: any): boolean {
+  return !isNaN(parseFloat(n)) && isFinite(n) && Number(n) === n;
+}
