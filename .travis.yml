@@ -22,12 +22,9 @@ stages:
   - linting
   - testing
   - building
-  - pages
-    if: branch = master
+  - deploying
   - github
-    if: branch = master
-  - publish
-    if: branch = master
+  - publishing
 
 git:
   depth: 3
@@ -40,7 +37,8 @@ jobs:
       script: npm run test
     - stage: building
       script: npm run build
-    - stage: pages
+    - stage: deploying
+      if: branch = master
       deploy:
         provider: pages
         skip-cleanup: true
@@ -50,6 +48,7 @@ jobs:
         on:
           branch: master
     - stage: github
+      if: branch = master
       script: skip
       deploy:
         provider: releases
@@ -57,6 +56,11 @@ jobs:
         skip_cleanup: true
         on:
           tags: true
+    - stage: publishing
+      if: branch = master
+      deploy:
+        on:
+          branch: master
 
 #after_success:
 #  - npm run travis-deploy-once "npm run semantic-release"
