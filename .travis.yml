@@ -19,12 +19,15 @@ cache:
 #    branch: master
 
 stages:
-  - linting
-  - testing
-  - building
-  - deploying
-  - github
-  - publishing
+  - name: linting
+  - name: testing
+  - name: building
+  - name: deploying
+    if: branch = master
+  - name: github
+    if: branch = master
+  - name: publishing
+    if: branch = master
 
 git:
   depth: 3
@@ -38,7 +41,6 @@ jobs:
     - stage: building
       script: npm run build
     - stage: deploying
-      if: branch = master
       deploy:
         provider: pages
         skip-cleanup: true
@@ -48,7 +50,6 @@ jobs:
         on:
           branch: master
     - stage: github
-      if: branch = master
       script: skip
       deploy:
         provider: releases
@@ -57,7 +58,6 @@ jobs:
         on:
           tags: true
     - stage: publishing
-      if: branch = master
       deploy:
         on:
           branch: master
