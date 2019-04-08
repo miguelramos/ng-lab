@@ -23,11 +23,11 @@ stages:
   - testing
   - building
   - pages
-  if: branch = master
+    if: branch = master
   - github
-  if: branch = master
+    if: branch = master
   - publish
-  if: branch = master
+    if: branch = master
 
 git:
   depth: 3
