@@ -22,6 +22,12 @@ stages:
   - linting
   - testing
   - building
+  - pages
+  if: branch = master
+  - github
+  if: branch = master
+  - publish
+  if: branch = master
 
 git:
   depth: 3
@@ -34,7 +40,7 @@ jobs:
       script: npm run test
     - stage: building
       script: npm run build
-    - stage: GitHub Pages
+    - stage: pages
       deploy:
         provider: pages
         skip-cleanup: true
@@ -43,7 +49,7 @@ jobs:
         local-dir: dist/apps/ng-lab
         on:
           branch: master
-    - stage: GitHub Release
+    - stage: github
       script: skip
       deploy:
         provider: releases

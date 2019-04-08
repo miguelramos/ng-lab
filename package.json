@@ -78,7 +78,6 @@
     "ngrx-store-freeze": "0.2.4",
     "prettier": "1.15.2",
     "protractor": "~5.4.0",
-    "semantic-release": "^15.13.3",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.29.0",
     "tslib": "^1.9.0",
@@ -95,8 +94,5 @@
       "pre-commit": "npm run lint && npm run test",
       "commit-msg": "commitlint --edit"
     }
-  },
-  "release": {
-    "branch": "master"
   }
 }
