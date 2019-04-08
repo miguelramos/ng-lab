@@ -8,19 +8,16 @@ install:
 cache:
   directories:
   - $HOME/.npm
-#script:
-#- npm run lint
-#- npm run test
-#- npm run build
 
 #deploy:
 #  provider: pages
 #  skip-cleanup: true
-#  github-token: $GITHUB_TOKEN
+#  github-token: $GH_TOKEN
 #  keep-history: true
-#  local-dir: dist/ng-lab
+#  local-dir: dist/apps/ng-lab
 #  on:
 #    branch: master
+
 stages:
   - linting
   - testing
@@ -37,6 +34,24 @@ jobs:
       script: npm run test
     - stage: building
       script: npm run build
+    - stage: GitHub Pages
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        github-token: "$GH_TOKEN"
+        keep-history: true
+        local-dir: dist/apps/ng-lab
+        on:
+          branch: master
+    - stage: GitHub Release
+      script: skip
+      deploy:
+        provider: releases
+        api_key: "$GH_TOKEN"
+        skip_cleanup: true
+        on:
+          tags: true
+
 #after_success:
 #  - npm run travis-deploy-once "npm run semantic-release"
 
