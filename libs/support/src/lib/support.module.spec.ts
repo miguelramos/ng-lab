@@ -1,14 +1,28 @@
 import { async, TestBed } from '@angular/core/testing';
-import { SupportModule } from './support.module';
 
-describe('SupportModule', () => {
+import { HubService } from './hub.service';
+import { SupportModule, ResponsiveBreakpointDirective } from './support.module';
+
+describe('> SupportModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [SupportModule]
     }).compileComponents();
   }));
 
-  it('should create', () => {
+  it('# Should have module defined.', () => {
     expect(SupportModule).toBeDefined();
+  });
+
+  it('# Should have HubService on dependency injector.', () => {
+    const service = TestBed.get(HubService, null);
+
+    expect(typeof service === 'object').toBeTruthy();
+  });
+
+  it('# Should have ResponsiveBreakpointDirective on dependency injector.', () => {
+    const service = TestBed.get(ResponsiveBreakpointDirective, null);
+
+    expect(typeof service === 'object').toBeTruthy();
   });
 });

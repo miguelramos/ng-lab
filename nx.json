@@ -1,5 +1,5 @@
 {
-  "npmScope": "miguelramos",
+  "npmScope": "ng-lab",
   "implicitDependencies": {
     "angular.json": "*",
     "package.json": "*",

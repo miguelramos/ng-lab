@@ -13,7 +13,7 @@
     "lib": ["es2017", "dom"],
     "baseUrl": ".",
     "paths": {
-      "@miguelramos/support": ["libs/support/src/index.ts"]
+      "@ng-lab/support": ["libs/support/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
