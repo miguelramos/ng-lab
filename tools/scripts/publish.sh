@@ -21,4 +21,8 @@ publish() {
   )
 }
 
-for i in ./dist/libs/*; do publish $i; done
+cp -r ./dist/libs ./deploy
+
+for i in ./deploy/*; do publish $i; done
+
+rm -rf ./deploy
