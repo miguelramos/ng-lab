@@ -58,6 +58,7 @@ jobs:
 #        on:
 #          tags: true
     - stage: publishing
+      if: branch = master
       before_install:
         # Clone the whole repository because we also need the develop branch for releasing
         - git clone "https://github.com/$TRAVIS_REPO_SLUG.git" "$TRAVIS_REPO_SLUG";
@@ -77,13 +78,13 @@ jobs:
         # Run automatic-release
         # - npm run automatic-release
         - ./tools/scripts/publish.sh
-      deploy:
-        provider: npm
-        email: "miguel.marques.ramos@gmail.com" # REPLACE!
-        api_key: "$NPM_TOKEN"
-        skip_cleanup: true
-        on:
-          branch: master
+      #deploy:
+      #  provider: npm
+      #  email: "miguel.marques.ramos@gmail.com" # REPLACE!
+      #  api_key: "$NPM_TOKEN"
+      #  skip_cleanup: true
+      #  on:
+      #    branch: master
 
 
 #after_success:
