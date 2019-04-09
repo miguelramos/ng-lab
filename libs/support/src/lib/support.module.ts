@@ -15,7 +15,3 @@ import { RESPONSIVE_BREAKPOINTS_TOKEN, DEFAULT_RESPONSIVE_BREAKPOINTS_TOKEN, Res
   exports: [ResponsiveBreakpointDirective]
 })
 export class SupportModule {}
-
-export * from './support';
-export * from './hub.service';
-export { RESPONSIVE_BREAKPOINTS_TOKEN, ResponsiveBreakpointDirective } from './responsive.directive';
