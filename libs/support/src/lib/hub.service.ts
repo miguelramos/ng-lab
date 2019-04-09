@@ -14,7 +14,7 @@ import { SupportModule } from './support.module';
 
 type fn = (params: any) => any;
 
-interface HubServiceActionInterface {
+export interface HubServiceActionInterface {
   event: string;
   data: any;
   callback: fn;

@@ -1,10 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { RESPONSIVE_BREAKPOINTS_TOKEN, DEFAULT_RESPONSIVE_BREAKPOINTS_TOKEN, ResponsiveBreakpointDirective } from './responsive.directive';
+
 @NgModule({
   imports: [CommonModule],
-  exports: []
+  providers: [
+    {
+      provide: RESPONSIVE_BREAKPOINTS_TOKEN,
+      useValue: DEFAULT_RESPONSIVE_BREAKPOINTS_TOKEN
+    }
+  ],
+  declarations: [ResponsiveBreakpointDirective],
+  exports: [ResponsiveBreakpointDirective]
 })
 export class SupportModule {}
 
 export * from './support';
+export * from './hub.service';
+export { RESPONSIVE_BREAKPOINTS_TOKEN, ResponsiveBreakpointDirective } from './responsive.directive';
