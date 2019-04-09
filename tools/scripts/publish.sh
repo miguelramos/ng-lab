@@ -16,13 +16,10 @@ publish() {
     if [ "$private" != "true" ]; then
     echo "📦  Publishing: $name";
     #$(npm bin)/automatic-release
-    npx automatic-release
+    npx automatic-release -f
+    npm publish --access public
     fi
   )
 }
 
-cp -r ./dist/libs ./deploy
-
-for i in ./deploy/*; do publish $i; done
-
-rm -rf ./deploy
+for i in ./dist/libs/*; do publish $i; done
