@@ -1,7 +1,7 @@
 import { async, TestBed } from '@angular/core/testing';
 
 import { HubService } from './hub.service';
-import { SupportModule } from './support.module';
+import { SupportModule, ResponsiveBreakpointDirective } from './support.module';
 
 describe('> SupportModule', () => {
   beforeEach(async(() => {
@@ -16,6 +16,12 @@ describe('> SupportModule', () => {
 
   it('# Should have HubService on dependency injector.', () => {
     const service = TestBed.get(HubService, null);
+
+    expect(typeof service === 'object').toBeTruthy();
+  });
+
+  it('# Should have ResponsiveBreakpointDirective on dependency injector.', () => {
+    const service = TestBed.get(ResponsiveBreakpointDirective, null);
 
     expect(typeof service === 'object').toBeTruthy();
   });
