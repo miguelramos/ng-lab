@@ -76,8 +76,8 @@ jobs:
         - git config credential.helper "store --file=.git/credentials";
         - echo "https://$GH_TOKEN:@github.com" > .git/credentials;
         # Run automatic-release
-        # - npm run automatic-release
-        - ./tools/scripts/publish.sh
+        - npm run release
+        #- ./tools/scripts/publish.sh
       #deploy:
       #  provider: npm
       #  email: "miguel.marques.ramos@gmail.com" # REPLACE!
