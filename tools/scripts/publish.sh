@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-BASEDIR=$(PWD)
+BASEDIR=$PWD
 echo "☢ Starting publishing process, Hendrix! 🎸"
 
 VERSION=$(cat package.json | grep version | head -n 1 | cut -d'"' -f 4)

@@ -81,6 +81,7 @@ jobs:
         provider: script
         script: bash tools/scripts/publish.sh
         api_key: "$NPM_TOKEN"
+        skip_cleanup: true
         on:
           branch: master
       #deploy:
