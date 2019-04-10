@@ -3,9 +3,12 @@ set -e
 BASEDIR=$(PWD)
 echo "☢ Starting publishing process, Hendrix! 🎸"
 
+VERSION=$(cat package.json | grep version | head -n 1 | cut -d'"' -f 4)
+
 publish() {
   (
     cd $1
+    local search="0.0.0-PLACEHOLDER"
     local name=$(cat package.json | grep name | head -n 1 | cut -d'"' -f 4)
     local private=$(cat package.json | grep private | head -n 1 | cut -d',' -f1 | cut -d':' -f2)
     #local targetVersion=$(cat package.json | grep version | head -n 1 | cut -d'"' -f 4)
@@ -16,6 +19,7 @@ publish() {
     if [ "$private" != "true" ]; then
     echo "📦  Publishing: $name";
     echo "Copy $BASEDIR/.npmrc to $1"
+    sed -i "" "s/${search}/${VERSION}/g" package.json
     cp "$BASEDIR"/.npmrc $PWD/
     cp "$BASEDIR"/CHANGELOG.md $PWD/
     #$(npm bin)/automatic-release
