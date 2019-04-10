@@ -77,7 +77,12 @@ jobs:
         - echo "https://$GH_TOKEN:@github.com" > .git/credentials;
         # Run automatic-release
         - npm run release
-        #- ./tools/scripts/publish.sh
+      deploy:
+        provider: script
+        script: bash tools/scripts/publish.sh
+        api_key: "$NPM_TOKEN"
+        on:
+          branch: master
       #deploy:
       #  provider: npm
       #  email: "miguel.marques.ramos@gmail.com" # REPLACE!

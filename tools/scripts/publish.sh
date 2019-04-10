@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-echo "$PWD"
+BASEDIR=$(PWD)
 echo "☢ Starting publishing process, Hendrix! 🎸"
 
 publish() {
@@ -15,8 +15,11 @@ publish() {
     echo "⚠️  $name"
     if [ "$private" != "true" ]; then
     echo "📦  Publishing: $name";
+    echo "Copy $BASEDIR/.npmrc to $1"
+    cp "$BASEDIR"/.npmrc $PWD/
+    cp "$BASEDIR"/CHANGELOG.md $PWD/
     #$(npm bin)/automatic-release
-    npx automatic-release -f
+    #npx automatic-release -f
     npm publish --access public
     fi
   )
