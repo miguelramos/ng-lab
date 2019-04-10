@@ -19,7 +19,7 @@ publish() {
     if [ "$private" != "true" ]; then
     echo "📦  Publishing: $name";
     echo "Copy $BASEDIR/.npmrc to $1"
-    sed -i "" "s/${search}/${VERSION}/g" package.json
+    sed -i "" "s/${search}/${VERSION}/g" $PWD/package.json
     cp "$BASEDIR"/.npmrc $PWD/
     cp "$BASEDIR"/CHANGELOG.md $PWD/
     #$(npm bin)/automatic-release
