@@ -29,7 +29,7 @@ publish() {
   )
 }
 
-ls- la
+ls -la
 npm install
 npm run build
 
