@@ -4,6 +4,14 @@ Also see the **[release page](https://github.com/miguelramos/ng-lab/releases)**.
 
 <br>
 
+## [0.0.6](https://github.com/miguelramos/ng-lab/releases/tag/0.0.6) (2019-04-11)
+
+### Bug Fixes
+
+* **script:** typo in publish script ([f6ab1d1](https://github.com/miguelramos/ng-lab/commit/f6ab1d1))
+
+<br>
+
 ## [0.0.5](https://github.com/miguelramos/ng-lab/releases/tag/0.0.5) (2019-04-11)
 
 
