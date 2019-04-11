@@ -19,18 +19,17 @@ publish() {
     if [ "$private" != "true" ]; then
     echo "📦  Publishing: $name";
     echo "Copy $BASEDIR/.npmrc to $1"
-    sed -i "" "s/${search}/${VERSION}/g" $PWD/package.json
     cp "$BASEDIR"/.npmrc $PWD/
     cp "$BASEDIR"/CHANGELOG.md $PWD/
+    echo "List directory"
+    ls -la
+    (ls package.json && echo "Package present") || echo "Package missing"
+    sed -i "" "s/${search}/${VERSION}/g" $PWD/package.json
     #$(npm bin)/automatic-release
     #npx automatic-release -f
     npm publish --access public
     fi
   )
 }
-
-ls -la
-npm install
-npm run build
 
 for i in ./dist/libs/*; do publish $i; done
