@@ -29,4 +29,7 @@ publish() {
   )
 }
 
+npm install
+npm run build
+
 for i in ./dist/libs/*; do publish $i; done
