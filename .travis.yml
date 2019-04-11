@@ -67,8 +67,7 @@ jobs:
         #  Fix Travis CI issue of detached heads in git
         - git checkout master
       install:
-        - ls -la
-      #  - npm install
+        - npm install
       #  - npm run build
       before_deploy:
         # Login to Git to be able to make commits (required by automatic-release)
