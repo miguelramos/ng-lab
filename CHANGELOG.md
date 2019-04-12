@@ -4,6 +4,14 @@ Also see the **[release page](https://github.com/miguelramos/ng-lab/releases)**.
 
 <br>
 
+## [0.0.9](https://github.com/miguelramos/ng-lab/releases/tag/0.0.9) (2019-04-12)
+
+### Bug Fixes
+
+* **npm:** registry url ([#13](https://github.com/miguelramos/ng-lab/issues/13)) ([ea289df](https://github.com/miguelramos/ng-lab/commit/ea289df))
+
+<br>
+
 ## [0.0.8](https://github.com/miguelramos/ng-lab/releases/tag/0.0.8) (2019-04-12)
 
 
