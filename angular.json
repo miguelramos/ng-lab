@@ -65,7 +65,10 @@
               "apps/ng-lab-demo/src/assets"
             ],
             "styles": ["apps/ng-lab-demo/src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": ["./node_modules"]
+            }
           },
           "configurations": {
             "production": {

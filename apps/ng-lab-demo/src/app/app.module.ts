@@ -1,16 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
+import { ClarityModule } from "@clr/angular";
 
 import { AppComponent } from './app.component';
-import { NxModule } from '@nrwl/nx';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    NxModule.forRoot(),
-    RouterModule.forRoot([], { initialNavigation: 'enabled' })
+    BrowserAnimationsModule,
+    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
+    ClarityModule
   ],
   providers: [],
   bootstrap: [AppComponent]

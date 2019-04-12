@@ -10,7 +10,7 @@
 [![dependency status](https://img.shields.io/david/miguelramos/ng-lab.svg?maxAge=3600&style=flat)](https://david-dm.org/miguelramos/ng-lab)
 [![Build Status](https://travis-ci.com/miguelramos/ng-lab.svg?branch=master)](https://travis-ci.com/miguelramos/ng-lab)
 [![license](https://img.shields.io/npm/l/ng-lab.svg?maxAge=3600&style=flat)](https://github.com/miguelramos/ng-lab/LICENSE)
-
+[![Coverage Status](https://coveralls.io/repos/github/miguelramos/ng-lab/badge.svg?branch=master)](https://coveralls.io/github/miguelramos/ng-lab?branch=master)
 
 </div>
 
