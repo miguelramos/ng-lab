@@ -21,6 +21,8 @@ publish() {
     echo "Copy $BASEDIR/.npmrc to $1"
     cp "$BASEDIR"/.npmrc $PWD/
     cp "$BASEDIR"/CHANGELOG.md $PWD/
+    cp "$BASEDIR"/README.md $PWD/
+    cp "$BASEDIR"/LICENSE $PWD/
     echo "List directory"
     ls -la
     (ls package.json && echo "Package present") || echo "Package missing"
