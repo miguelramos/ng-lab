@@ -10,6 +10,12 @@
   "projects": {
     "support": {
       "tags": ["lab:support", "lab:kit"]
+    },
+    "ng-lab-demo": {
+      "tags": ["ng-lab:app"]
+    },
+    "ng-lab-demo-e2e": {
+      "tags": []
     }
   }
 }
