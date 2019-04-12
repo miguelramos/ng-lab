@@ -23,9 +23,7 @@ stages:
   - name: testing
   - name: building
   - name: deploying
-    if: branch = master
-  - name: github
-    if: branch = master
+#    if: branch = master
   - name: publishing
     if: branch = master
 
@@ -40,23 +38,18 @@ jobs:
       script: npm run test
     - stage: building
       script: npm run build
-#    - stage: deploying
-#      deploy:
-#        provider: pages
-#        skip-cleanup: true
-#        github-token: "$GH_TOKEN"
-#        keep-history: true
-#        local-dir: dist/apps/ng-lab
+    - stage: deploying
+      before_deploy:
+        - npm install
+        - npm run build -- --base-href /ng-lab-demo/
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        github-token: "$GH_TOKEN"
+        keep-history: true
+        local-dir: dist/apps/ng-lab-demo
 #        on:
 #          branch: master
-#    - stage: github
-#      script: skip
-#      deploy:
-#        provider: releases
-#        api_key: "$GH_TOKEN"
-#        skip_cleanup: true
-#        on:
-#          tags: true
     - stage: publishing
       if: branch = master
       before_install:
