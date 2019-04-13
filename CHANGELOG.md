@@ -4,6 +4,19 @@ Also see the **[release page](https://github.com/miguelramos/ng-lab/releases)**.
 
 <br>
 
+## [0.1.0](https://github.com/miguelramos/ng-lab/releases/tag/0.1.0) (2019-04-13)
+
+### Bug Fixes
+
+* **deploy:** missing app name ([#17](https://github.com/miguelramos/ng-lab/issues/17)) ([d94ded4](https://github.com/miguelramos/ng-lab/commit/d94ded4))
+* **travis:** check travis gh deploy ([#16](https://github.com/miguelramos/ng-lab/issues/16)) ([ccde11c](https://github.com/miguelramos/ng-lab/commit/ccde11c))
+
+### Features
+
+* **app:** demo app and gh pages ([#15](https://github.com/miguelramos/ng-lab/issues/15)) ([6fc22cf](https://github.com/miguelramos/ng-lab/commit/6fc22cf)), closes [#14](https://github.com/miguelramos/ng-lab/issues/14)
+
+<br>
+
 ## [0.0.9](https://github.com/miguelramos/ng-lab/releases/tag/0.0.9) (2019-04-12)
 
 ### Bug Fixes
