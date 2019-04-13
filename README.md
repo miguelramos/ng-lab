@@ -34,6 +34,7 @@ First check each package describe or just navigate to demo app for more informat
 |Package|Info|Badge|
 |-------|----|-----|
 |@ng-lab/support| Many helpers functions and services like: responsive detection, hub for pub/sub | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/support.svg?color=green&style=flat) |
+|@ng-lab/configurator| Service to regulate configurations | In Development |
 
 #### For Development
 
