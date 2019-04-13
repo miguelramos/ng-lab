@@ -40,6 +40,125 @@
           "styleext": "scss"
         }
       }
+    },
+    "ng-lab-demo": {
+      "root": "apps/ng-lab-demo/",
+      "sourceRoot": "apps/ng-lab-demo/src",
+      "projectType": "application",
+      "prefix": "ng-lab",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/ng-lab-demo",
+            "index": "apps/ng-lab-demo/src/index.html",
+            "main": "apps/ng-lab-demo/src/main.ts",
+            "polyfills": "apps/ng-lab-demo/src/polyfills.ts",
+            "tsConfig": "apps/ng-lab-demo/tsconfig.app.json",
+            "assets": [
+              "apps/ng-lab-demo/src/favicon.ico",
+              "apps/ng-lab-demo/src/assets"
+            ],
+            "styles": ["apps/ng-lab-demo/src/styles.scss"],
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": ["./node_modules"]
+            }
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/ng-lab-demo/src/environments/environment.ts",
+                  "with": "apps/ng-lab-demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ng-lab-demo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ng-lab-demo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-lab-demo:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/ng-lab-demo/tsconfig.app.json",
+              "apps/ng-lab-demo/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/ng-lab-demo/jest.config.js",
+            "tsConfig": "apps/ng-lab-demo/tsconfig.spec.json",
+            "setupFile": "apps/ng-lab-demo/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "ng-lab-demo-e2e": {
+      "root": "apps/ng-lab-demo-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/ng-lab-demo-e2e/protractor.conf.js",
+            "devServerTarget": "ng-lab-demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ng-lab-demo:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/ng-lab-demo-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "cli": {
