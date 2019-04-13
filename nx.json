@@ -12,10 +12,10 @@
       "tags": ["lab:support", "lab:kit"]
     },
     "ng-lab-demo": {
-      "tags": ["ng-lab:app"]
+      "tags": ["lab:app","lab:demo"]
     },
     "ng-lab-demo-e2e": {
-      "tags": []
+      "tags": ["lab:app","lab:e2e"]
     }
   }
 }
