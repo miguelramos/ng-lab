@@ -4,6 +4,11 @@ Also see the **[release page](https://github.com/miguelramos/ng-lab/releases)**.
 
 <br>
 
+## [0.1.1](https://github.com/miguelramos/ng-lab/releases/tag/0.1.1) (2019-04-13)
+
+
+<br>
+
 ## [0.1.0](https://github.com/miguelramos/ng-lab/releases/tag/0.1.0) (2019-04-13)
 
 ### Bug Fixes
