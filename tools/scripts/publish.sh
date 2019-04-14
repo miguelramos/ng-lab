@@ -23,6 +23,7 @@ publish() {
     cp "$BASEDIR"/CHANGELOG.md $PWD/
     cp "$BASEDIR"/README.md $PWD/
     cp "$BASEDIR"/LICENSE $PWD/
+    cp "$PWD"/index.html $PWD/404.html
     echo "List directory"
     ls -la
     (ls package.json && echo "Package present") || echo "Package missing"
