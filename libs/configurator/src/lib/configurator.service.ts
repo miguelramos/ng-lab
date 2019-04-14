@@ -8,7 +8,7 @@
 import { Injectable, Optional, Inject, SkipSelf } from '@angular/core';
 
 import { Subject } from 'rxjs';
-import { isObject, mapKeys, set, startsWith, get, merge } from 'lodash';
+import { isObject, mapKeys, set, startsWith, get, merge, has } from 'lodash';
 
 import { ConfigOptions } from './configurator.typings';
 import { OPTIONS_TOKEN, CONFIG_DEFAULT_OPTIONS } from './configurator.token';
@@ -16,7 +16,7 @@ import { OPTIONS_TOKEN, CONFIG_DEFAULT_OPTIONS } from './configurator.token';
 @Injectable({
   providedIn: 'root'
 })
-export class Configurator {
+export class ConfiguratorService {
   listener = new Subject<ConfigOptions>();
 
   private repository: ConfigOptions = <ConfigOptions>{};
@@ -30,7 +30,7 @@ export class Configurator {
     this.options = merge(CONFIG_DEFAULT_OPTIONS, options);
   }
 
-  setOption(name: string, value: any): void {
+  public setOption(name: string, value: any): void {
     this.repository[name] = value;
     this.listener.next({ options: this.repository });
   }
@@ -39,11 +39,11 @@ export class Configurator {
    * Get a configuration value from the collection.
    *
    */
-  getOption<O>(name: string, defaults: any = null): O {
+  public getOption<O>(name: string, defaults: any = null): O {
     return this.hasOption(name) ? this.repository[name] : defaults;
   }
 
-  getOptionTree<T>(rootKey: string, fromRoot: boolean = true): T {
+  public getOptionTree<T>(rootKey: string, fromRoot: boolean = true): T {
     const tree = {};
 
     mapKeys(this.options, (value: any, key: string) => {
@@ -65,7 +65,7 @@ export class Configurator {
     this.flat(opt);
   }
 
-  reset(): void {
+  public reset(): void {
     this.options = {};
     this.repository = {};
   }
@@ -74,8 +74,8 @@ export class Configurator {
    * Verify if option name exists on the collection.
    *
    */
-  hasOption(name: string): boolean {
-    return this.repository.hasOwnProperty(name);
+  public hasOption(name: string): boolean {
+    return has(this.repository, name);
   }
 
   /**
