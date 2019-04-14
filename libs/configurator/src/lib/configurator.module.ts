@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { OPTIONS_TOKEN } from './configurator.token';
-import { Configurator } from './configurator.service';
 import { ConfigOptions } from './configurator.typings';
+import { ConfiguratorService } from './configurator.service';
 
 @NgModule({
   imports: [CommonModule]
@@ -18,8 +18,8 @@ export class ConfiguratorModule {
           useValue: config
         },
         {
-          provide: Configurator,
-          useClass: Configurator,
+          provide: ConfiguratorService,
+          useClass: ConfiguratorService,
           deps: [OPTIONS_TOKEN]
         }
       ]
