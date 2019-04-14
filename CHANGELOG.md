@@ -4,6 +4,14 @@ Also see the **[release page](https://github.com/miguelramos/ng-lab/releases)**.
 
 <br>
 
+## [0.2.0](https://github.com/miguelramos/ng-lab/releases/tag/0.2.0) (2019-04-14)
+
+### Features
+
+* **configurator:** service for configs ([#20](https://github.com/miguelramos/ng-lab/issues/20)) ([bfbfae3](https://github.com/miguelramos/ng-lab/commit/bfbfae3))
+
+<br>
+
 ## [0.1.1](https://github.com/miguelramos/ng-lab/releases/tag/0.1.1) (2019-04-13)
 
 
