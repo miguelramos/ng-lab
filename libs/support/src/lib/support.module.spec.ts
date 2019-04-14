@@ -1,7 +1,8 @@
 import { async, TestBed } from '@angular/core/testing';
 
 import { HubService } from './hub.service';
-import { SupportModule, ResponsiveBreakpointDirective } from './support.module';
+import { SupportModule } from './support.module';
+import { ResponsiveBreakpointDirective } from './responsive.directive';
 
 describe('> SupportModule', () => {
   beforeEach(async(() => {
