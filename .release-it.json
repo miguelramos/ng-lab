@@ -1,0 +1,25 @@
+{
+  "increment": "conventional:angular",
+  "scripts": {
+    "changelog": "npx conventional-changelog -p angular -u | tail -n +3",
+    "beforeStage": "npx conventional-changelog -p angular -i CHANGELOG.md -s"
+  },
+  "git": {
+    "tagName": "v${version}",
+    "commit": false,
+    "commitMessage": "release: ${version}",
+    "commitArgs": "-S",
+    "tag": false,
+    "tagAnnotation": "release ${version}",
+    "tagArgs": "",
+    "push": false
+  },
+  "github": {
+    "release": false,
+    "tokenRef": "GH_TOKEN",
+    "releaseName": "Release ${version}"
+  },
+  "npm": {
+    "publish": false
+  }
+}

@@ -7,7 +7,7 @@
       "root": "libs/support",
       "sourceRoot": "libs/support/src",
       "projectType": "library",
-      "prefix": "miguelramos",
+      "prefix": "ng-lab",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
