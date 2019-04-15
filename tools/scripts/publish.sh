@@ -29,7 +29,7 @@ publish() {
     sed -i package.json -e "s/${search}/${VERSION}/g" package.json
     #$(npm bin)/automatic-release
     #npx automatic-release -f
-    npm publish --access public
+    #npm publish --access public
     fi
   )
 }
