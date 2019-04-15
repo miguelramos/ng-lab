@@ -1,7 +1,7 @@
 {
   "increment": "conventional:angular",
   "scripts": {
-    "beforeStage": "conventional-changelog -p angular -i CHANGELOG.md -s && npm run build && ./tools/scripts/publish.sh ${version}"
+    "beforeStage": "tools/scripts/publish.sh ${version}"
   },
   "git": {
     "tagName": "v${version}",

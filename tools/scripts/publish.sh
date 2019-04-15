@@ -3,6 +3,9 @@ set -e
 BASEDIR=$PWD
 echo "☢ Starting publishing process, Hendrix! 🎸"
 
+conventional-changelog -p angular -i CHANGELOG.md -s -r 0
+
+npm run build
 #VERSION=$(cat package.json | grep version | head -n 1 | cut -d'"' -f 4)
 VERSION=$1
 
