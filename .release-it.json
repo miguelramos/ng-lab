@@ -3,7 +3,7 @@
   "scripts": {
     "changelog": "conventional-changelog -p angular -u | tail -n +3",
     "beforeStage": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "afterBump": "npm run build && ./tools/scripts/publish.sh"
+    "beforeStart": "npm run build && ./tools/scripts/publish.sh ${version}"
   },
   "git": {
     "tagName": "v${version}",
