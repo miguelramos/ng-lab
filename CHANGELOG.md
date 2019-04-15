@@ -4,6 +4,15 @@ Also see the **[release page](https://github.com/miguelramos/ng-lab/releases)**.
 
 <br>
 
+## [0.2.2](https://github.com/miguelramos/ng-lab/releases/tag/0.2.2) (2019-04-15)
+
+### Bug Fixes
+
+* **deploy:** command wrong stage ([#23](https://github.com/miguelramos/ng-lab/issues/23)) ([05afa8f](https://github.com/miguelramos/ng-lab/commit/05afa8f))
+* **travis:** wrong copy script ([#22](https://github.com/miguelramos/ng-lab/issues/22)) ([6309219](https://github.com/miguelramos/ng-lab/commit/6309219)), closes [#14](https://github.com/miguelramos/ng-lab/issues/14)
+
+<br>
+
 ## [0.2.1](https://github.com/miguelramos/ng-lab/releases/tag/0.2.1) (2019-04-14)
 
 
