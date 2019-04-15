@@ -42,6 +42,7 @@ jobs:
       before_deploy:
         - npm install
         - npm run deploy
+        - cp dist/apps/ng-lab-demo/index.html dist/apps/ng-lab-demo/404.html
       deploy:
         provider: pages
         skip-cleanup: true
@@ -62,7 +63,6 @@ jobs:
       install:
         - npm install
         - npm run build
-        - cp dist/apps/ng-lab-demo/index.html dist/apps/ng-lab-demo/404.html
       before_deploy:
         # Login to Git to be able to make commits (required by automatic-release)
         - git config --global user.name "Miguel Ramos"; # REPLACE!
