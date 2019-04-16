@@ -7,7 +7,7 @@
     "tagName": "v${version}",
     "commit": true,
     "commitMessage": "release: ${version}",
-    "commitArgs": "-S",
+    "commitArgs": "-S --no-verify",
     "tag": true,
     "tagAnnotation": "Packages released with version: ${version}",
     "tagArgs": "",
