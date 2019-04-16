@@ -31,7 +31,10 @@ publish() {
     cp "$BASEDIR"/README.md $PWD/
     cp "$BASEDIR"/LICENSE $PWD/
 
-    sed -i package.json -e "s/${search}/${VERSION}/g" package.json
+    # For linux
+    #sed -i package.json -e "s/${search}/${VERSION}/g" package.json
+    # For OSX
+    sed -i "" -e "s/${search}/${VERSION}/g" package.json
     npm pack
     #$(npm bin)/automatic-release
     #npx automatic-release -f
@@ -42,4 +45,4 @@ publish() {
 
 for i in ./dist/libs/*; do publish $i; done
 
-sed -i package.json -e "s/${PKG_VERSION}/${VERSION}/g" package.json
+sed -i "" -e "s/${PKG_VERSION}/${VERSION}/g" package.json
