@@ -5,8 +5,11 @@ echo "☢ Starting publishing process, Hendrix! 🎸"
 
 conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 
+rm -rf dist/libs
 npm run build
-#VERSION=$(cat package.json | grep version | head -n 1 | cut -d'"' -f 4)
+
+PKG_VERSION=$(cat package.json | grep version | head -n 1 | cut -d'"' -f 4)
+
 VERSION=$1
 
 publish() {
@@ -38,3 +41,5 @@ publish() {
 }
 
 for i in ./dist/libs/*; do publish $i; done
+
+sed -i package.json -e "s/${PKG_VERSION}/${VERSION}/g" package.json

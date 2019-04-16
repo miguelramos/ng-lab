@@ -16,7 +16,11 @@
   "github": {
     "release": false,
     "tokenRef": "GH_TOKEN",
-    "releaseName": "Release ${version}"
+    "releaseName": "Release ${version}",
+    "assets": [
+      "dist/libs/support/*.tgz",
+      "dist/libs/configurator/*.tgz"
+    ]
   },
   "npm": {
     "publish": false
