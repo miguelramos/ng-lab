@@ -45,4 +45,4 @@ publish() {
 
 for i in ./dist/libs/*; do publish $i; done
 
-sed -i "" -e "s/${PKG_VERSION}/${VERSION}/g" package.json
+sed -i package.json -e "s/${PKG_VERSION}/${VERSION}/g"
