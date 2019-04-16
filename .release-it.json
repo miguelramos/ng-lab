@@ -5,16 +5,16 @@
   },
   "git": {
     "tagName": "v${version}",
-    "commit": false,
+    "commit": true,
     "commitMessage": "release: ${version}",
     "commitArgs": "-S",
-    "tag": false,
-    "tagAnnotation": "release ${version}",
+    "tag": true,
+    "tagAnnotation": "Packages released with version: ${version}",
     "tagArgs": "",
     "push": false
   },
   "github": {
-    "release": false,
+    "release": true,
     "tokenRef": "GH_TOKEN",
     "releaseName": "Release ${version}",
     "assets": [
