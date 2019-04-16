@@ -27,10 +27,9 @@ publish() {
     cp "$BASEDIR"/CHANGELOG.md $PWD/
     cp "$BASEDIR"/README.md $PWD/
     cp "$BASEDIR"/LICENSE $PWD/
-    echo "List directory"
-    ls -la
-    (ls package.json && echo "Package present") || echo "Package missing"
+
     sed -i package.json -e "s/${search}/${VERSION}/g" package.json
+    npm pack
     #$(npm bin)/automatic-release
     #npx automatic-release -f
     #npm publish --access public
