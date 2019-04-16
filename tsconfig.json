@@ -14,7 +14,9 @@
     "baseUrl": ".",
     "paths": {
       "@ng-lab/support": ["libs/support/src/index.ts"],
-      "@ng-lab/configurator": ["libs/configurator/src/index.ts"]
+      "@ng-lab/configurator": ["libs/configurator/src/index.ts"],
+      "@ng-lab/hub": ["libs/hub/src/index.ts"],
+      "@ng-lab/responsive": ["libs/responsive/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

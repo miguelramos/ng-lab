@@ -19,6 +19,12 @@
     },
     "configurator": {
       "tags": ["lab:config", "lab:kit"]
+    },
+    "hub": {
+      "tags": ["lab:kit", "lab:hub"]
+    },
+    "responsive": {
+      "tags": ["lan:kit", "lab:responsive"]
     }
   }
 }
