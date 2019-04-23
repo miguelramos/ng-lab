@@ -9,7 +9,7 @@ import { Output, Directive, HostListener, AfterViewInit, InjectionToken, Inject 
 
 import { Subject } from 'rxjs';
 
-import { between } from './support';
+import { between } from '@ng-lab/support';
 
 export interface Breakpoints {
   XS: number;
