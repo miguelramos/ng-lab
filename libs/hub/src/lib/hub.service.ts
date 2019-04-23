@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 
 import { ReplaySubject } from 'rxjs';
 
-import { SupportModule } from './support.module';
+import { HubModule } from './hub.module';
 
 type fn = (params: any) => any;
 
@@ -22,7 +22,7 @@ export interface HubServiceActionInterface {
 }
 
 @Injectable({
-  providedIn: SupportModule
+  providedIn: HubModule
 })
 export class HubService {
   private readonly provision: Map<string, []|[fn]> = new Map();
