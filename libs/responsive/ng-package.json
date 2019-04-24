@@ -2,6 +2,12 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/libs/responsive",
   "lib": {
-    "entryFile": "src/index.ts"
-  }
+    "entryFile": "src/index.ts",
+    "umdModuleIds": {
+      "@ng-lab/support": "ngLab.support"
+    }
+  },
+  "whitelistedNonPeerDependencies": [
+    "@ng-lab/support"
+  ]
 }

@@ -6,14 +6,6 @@
 * found in the LICENSE file at https://www.ng-lab.com/license
 */
 
-interface EventHubInterface {
-  hub: { key: [(param: any) => void] };
-  emit: (event: string, data: any) => void;
-  on: (event: string, fn: (param: any) => void) => void;
-  off: (event: string, fn: Function) => void;
-  destroy: () => void;
-}
-
 /**
  * Create unique UUID
  */
