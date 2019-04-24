@@ -1,4 +1,4 @@
-import { uniqueID, between, getUrlHostname, isValidNumber } from "./support";
+import { uniqueID, between, getUrlHostname, isValidNumber } from './support';
 
 describe('> Support helper functions.', () => {
   it('# Should create a valid UUID V4.', () => {
@@ -16,8 +16,12 @@ describe('> Support helper functions.', () => {
   });
 
   it('# Should get hostname from url.', () => {
-    expect(getUrlHostname('http://www.ng-lab.com/hostname')).toEqual('www.ng-lab.com');
-    expect(getUrlHostname('https://www.ng-lab.com/hostname?foo=bar')).toEqual('www.ng-lab.com');
+    expect(getUrlHostname('http://www.ng-lab.com/hostname')).toEqual(
+      'www.ng-lab.com'
+    );
+    expect(getUrlHostname('https://www.ng-lab.com/hostname?foo=bar')).toEqual(
+      'www.ng-lab.com'
+    );
   });
 
   it('# Should check if valid number.', () => {

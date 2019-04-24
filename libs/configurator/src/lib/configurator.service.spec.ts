@@ -1,4 +1,4 @@
-import { ConfiguratorService } from "./configurator.service";
+import { ConfiguratorService } from './configurator.service';
 
 describe('> ConfiguratorService', () => {
   let configuratorService: ConfiguratorService;
@@ -30,7 +30,9 @@ describe('> ConfiguratorService', () => {
 
     configuratorService.setOption('settings', settings);
 
-    expect(configuratorService.hasOption('settings.with.deep.notation')).toBeTruthy();
+    expect(
+      configuratorService.hasOption('settings.with.deep.notation')
+    ).toBeTruthy();
   });
 
   it('# Should get a tree of options', () => {
@@ -49,7 +51,7 @@ describe('> ConfiguratorService', () => {
     const fullTree = configuratorService.getOptionTree('settings', true);
     const tree = configuratorService.getOptionTree('settings', false);
 
-    expect(fullTree).toEqual({ settings : settings});
+    expect(fullTree).toEqual({ settings: settings });
     expect(tree).toEqual(settings);
   });
 

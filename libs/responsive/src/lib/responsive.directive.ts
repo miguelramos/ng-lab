@@ -1,11 +1,18 @@
 /**
-* @license
-* Copyright NgLab All Rights Reserved.
-*
-* Use of this source code is governed by an MIT-style license that can be
-* found in the LICENSE file at https://www.ng-lab.com/license
-*/
-import { Output, Directive, HostListener, AfterViewInit, InjectionToken, Inject } from '@angular/core';
+ * @license
+ * Copyright NgLab All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://www.ng-lab.com/license
+ */
+import {
+  Output,
+  Directive,
+  HostListener,
+  AfterViewInit,
+  InjectionToken,
+  Inject
+} from '@angular/core';
 
 import { Subject } from 'rxjs';
 
@@ -27,7 +34,9 @@ export const DEFAULT_RESPONSIVE_BREAKPOINTS_TOKEN: Breakpoints = {
   XL: 1200
 };
 
-export const RESPONSIVE_BREAKPOINTS_TOKEN = new InjectionToken<Breakpoints>('[RESPONSIVE] Breakpoints definitions.')
+export const RESPONSIVE_BREAKPOINTS_TOKEN = new InjectionToken<Breakpoints>(
+  '[RESPONSIVE] Breakpoints definitions.'
+);
 
 @Directive({
   // tslint:disable-next-line:directive-selector
@@ -37,12 +46,12 @@ export const RESPONSIVE_BREAKPOINTS_TOKEN = new InjectionToken<Breakpoints>('[RE
 export class ResponsiveBreakpointDirective implements AfterViewInit {
   breakpoint: string;
 
-  @Output() responsiveChange = new Subject<{ width: number; key: string}>();
+  @Output() responsiveChange = new Subject<{ width: number; key: string }>();
 
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize(width: number) {
     this.gridReference(width);
-    this.responsiveChange.next({width: width, key: this.breakpoint});
+    this.responsiveChange.next({ width: width, key: this.breakpoint });
   }
 
   constructor(
@@ -58,15 +67,15 @@ export class ResponsiveBreakpointDirective implements AfterViewInit {
       this.breakpoint = 'XS';
     }
 
-    if (between(width, this.breakpoints.XS+1, this.breakpoints.SM)) {
+    if (between(width, this.breakpoints.XS + 1, this.breakpoints.SM)) {
       this.breakpoint = 'SM';
     }
 
-    if (between(width, this.breakpoints.SM+1, this.breakpoints.MD)) {
+    if (between(width, this.breakpoints.SM + 1, this.breakpoints.MD)) {
       this.breakpoint = 'MD';
     }
 
-    if (between(width, this.breakpoints.MD+1, this.breakpoints.LG)) {
+    if (between(width, this.breakpoints.MD + 1, this.breakpoints.LG)) {
       this.breakpoint = 'LG';
     }
 

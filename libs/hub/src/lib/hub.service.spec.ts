@@ -1,4 +1,4 @@
-import { HubService } from "./hub.service";
+import { HubService } from './hub.service';
 
 describe('> Hub Service', () => {
   let hubService: HubService;
@@ -12,7 +12,7 @@ describe('> Hub Service', () => {
   });
 
   it('# Should define a callback on hub', () => {
-    function bar() { }
+    function bar() {}
 
     hubService.on('foo', bar);
 
@@ -41,14 +41,14 @@ describe('> Hub Service', () => {
       expect(rs.action).toEqual('emit' || 'on');
     });
 
-    function bar() { }
+    function bar() {}
 
     hubService.on('foo', bar);
     hubService.emit('foo', null);
   });
 
   it('# Should clear hub provision.', () => {
-    function bar() { }
+    function bar() {}
 
     hubService.on('foo', bar);
 
@@ -60,7 +60,7 @@ describe('> Hub Service', () => {
   });
 
   it('# Should put off callbacks.', () => {
-    function bar() { }
+    function bar() {}
 
     hubService.on('foo', bar);
 
