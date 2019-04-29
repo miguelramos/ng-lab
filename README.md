@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./apps/ng-lab-demo/src/assets/ng-logo.svg">
+  <img src="./apps/ng-lab-demo/src/assets/ng-logo.svg"><br/>
   <img src="./apps/ng-lab-demo/src/assets/lab-logo.svg">
 
 #
@@ -33,8 +33,10 @@ First check each package describe or just navigate to demo app for more informat
 
 |Package|Info|Badge|
 |-------|----|-----|
-|@ng-lab/support| Many helpers functions and services like: responsive detection, hub for pub/sub | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/support.svg?color=green&style=flat) |
-|@ng-lab/configurator| Service to regulate configurations | In Development |
+|@ng-lab/support| Many helpers functions | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/support.svg?color=green&style=flat) |
+|@ng-lab/configurator| Service to regulate configurations | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/configurator.svg?color=green&style=flat) |
+|@ng-lab/responsive| Service to observe responsive media queries | In development |
+|@ng-lab/hub| Service to trigger/listener hub events like pub/sub | In development |
 
 #### For Development
 

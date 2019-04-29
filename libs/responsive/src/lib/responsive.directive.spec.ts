@@ -1,18 +1,22 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
 
-import { ResponsiveBreakpointDirective, RESPONSIVE_BREAKPOINTS_TOKEN, DEFAULT_RESPONSIVE_BREAKPOINTS_TOKEN } from './responsive.directive';
+import {
+  ResponsiveBreakpointDirective,
+  RESPONSIVE_BREAKPOINTS_TOKEN,
+  DEFAULT_RESPONSIVE_BREAKPOINTS_TOKEN
+} from './responsive.directive';
 
 @Component({
   template: '<p ngResponsive>Testing Directives is awesome!</p>'
 })
 class TestComponent {
-  @ViewChild(ResponsiveBreakpointDirective, { read: ResponsiveBreakpointDirective })
+  @ViewChild(ResponsiveBreakpointDirective, {
+    read: ResponsiveBreakpointDirective
+  })
   responsiveDirective: ResponsiveBreakpointDirective;
 
-  constructor(
-    private _elRef: ElementRef
-  ) { }
+  constructor(private _elRef: ElementRef) {}
 }
 
 describe('> ResponsiveBreakpointDirective', () => {

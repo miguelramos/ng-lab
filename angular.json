@@ -197,6 +197,82 @@
           "styleext": "scss"
         }
       }
+    },
+    "hub": {
+      "root": "libs/hub",
+      "sourceRoot": "libs/hub/src",
+      "projectType": "library",
+      "prefix": "ng-lab",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/hub/tsconfig.lib.json",
+            "project": "libs/hub/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/hub/tsconfig.lib.json",
+              "libs/hub/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/hub/jest.config.js",
+            "tsConfig": "libs/hub/tsconfig.spec.json",
+            "setupFile": "libs/hub/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "responsive": {
+      "root": "libs/responsive",
+      "sourceRoot": "libs/responsive/src",
+      "projectType": "library",
+      "prefix": "ng-lab",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/responsive/tsconfig.lib.json",
+            "project": "libs/responsive/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/responsive/tsconfig.lib.json",
+              "libs/responsive/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/responsive/jest.config.js",
+            "tsConfig": "libs/responsive/tsconfig.spec.json",
+            "setupFile": "libs/responsive/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
@@ -209,10 +285,17 @@
   },
   "schematics": {
     "@nrwl/schematics:application": {
-      "style": "scss"
+      "style": "scss",
+      "unitTestRunner": "karma",
+      "e2eTestRunner": "protractor"
     },
     "@nrwl/schematics:library": {
-      "style": "scss"
+      "style": "scss",
+      "unitTestRunner": "karma",
+      "framework": "angular"
+    },
+    "@nrwl/schematics:node-application": {
+      "framework": "express"
     }
   },
   "defaultProject": "support"

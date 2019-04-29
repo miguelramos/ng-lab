@@ -1,9 +1,10 @@
 {
-  "name": "@ng-lab/support",
+  "name": "@ng-lab/responsive",
   "version": "0.0.0-PLACEHOLDER",
   "peerDependencies": {
     "@angular/common": "^7.1.0",
-    "@angular/core": "^7.1.0"
+    "@angular/core": "^7.1.0",
+    "@ng-lab/support": "0.0.0-PLACEHOLDER"
   },
   "publishConfig": {
     "access": "public"
@@ -27,6 +28,6 @@
     "angular",
     "library",
     "ng-lab",
-    "support"
+    "responsive"
   ]
 }

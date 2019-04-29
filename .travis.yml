@@ -1,13 +1,17 @@
 dist: trusty
 sudo: false
 language: node_js
-node_js: node
+node_js:
+  - "10.9.0"
 
 install:
 - npm ci
+
 cache:
   directories:
-  - $HOME/.npm
+    - $HOME/.node-gyp
+    - $HOME/.npm
+    - node_modules
 
 stages:
   - name: linting

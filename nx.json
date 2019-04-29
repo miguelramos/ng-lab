@@ -9,16 +9,22 @@
   },
   "projects": {
     "support": {
-      "tags": ["lab:support", "lab:kit"]
+      "tags": ["scope:lib", "type:functional"]
     },
     "ng-lab-demo": {
-      "tags": ["lab:app", "lab:demo"]
+      "tags": ["scope:app"]
     },
     "ng-lab-demo-e2e": {
-      "tags": ["lab:app", "lab:e2e"]
+      "tags": ["scope:e2e"]
     },
     "configurator": {
-      "tags": ["lab:config", "lab:kit"]
+      "tags": ["scope:lib", "type:functional"]
+    },
+    "hub": {
+      "tags": ["scope:lib", "type:functional"]
+    },
+    "responsive": {
+      "tags": ["scope:lib", "type:functional"]
     }
   }
 }
