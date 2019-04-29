@@ -1,4 +1,13 @@
-## [0.2.3](https://github.com/miguelramos/ng-lab/compare/0.2.2...0.2.3) (2019-04-16)
+## [0.2.4](https://github.com/miguelramos/ng-lab/compare/v0.2.3...v0.2.4) (2019-04-29)
+
+
+### Bug Fixes
+
+* **dependency:** lib dependency ([7e36b93](https://github.com/miguelramos/ng-lab/commit/7e36b93))
+
+
+
+## [0.2.3](https://github.com/miguelramos/ng-lab/compare/0.2.2...v0.2.3) (2019-04-16)
 
 
 
