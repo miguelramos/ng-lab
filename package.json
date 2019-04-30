@@ -24,11 +24,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm run build:support && npm run build:configurator && npm run build:responsive && npm run build:hub",
+    "build": "npm run build:support && npm run build:configurator && npm run build:responsive && npm run build:hub && npm run build:jwt",
     "build:support": "ng build support",
     "build:configurator": "ng build configurator",
     "build:responsive": "ng build responsive",
     "build:hub": "ng build hub",
+    "build:jwt": "ng build jwt",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
     "e2e": "ng e2e",

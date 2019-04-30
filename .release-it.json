@@ -18,8 +18,11 @@
     "tokenRef": "GH_TOKEN",
     "releaseName": "Release ${version}",
     "assets": [
-      "dist/libs/support/*.tgz",
-      "dist/libs/configurator/*.tgz"
+      "dist/libs/configurator/*.tgz",
+      "dist/libs/hub/*.tgz",
+      "dist/libs/jwt/*.tgz",
+      "dist/libs/responsive/*.tgz",
+      "dist/libs/support/*.tgz"
     ]
   },
   "npm": {
