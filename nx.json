@@ -28,6 +28,9 @@
     },
     "jwt": {
       "tags": ["scope:lib", "type:functional"]
+    },
+    "http-url": {
+      "tags": ["scope:lib", "type:feature"]
     }
   }
 }
