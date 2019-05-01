@@ -318,6 +318,13 @@
       "projectType": "library",
       "prefix": "ng-lab",
       "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/http/url/tsconfig.lib.json",
+            "project": "libs/http/url/ng-package.json"
+          }
+        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
