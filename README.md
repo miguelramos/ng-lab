@@ -6,7 +6,7 @@
 
 **Angular functional library**
 
-[![npm version](https://img.shields.io/npm/v/@ng-lab/support.svg?maxAge=3600&style=flat)](https://www.npmjs.com/package/automatic-release)
+[![npm version](https://img.shields.io/npm/v/@ng-lab/support.svg?maxAge=3600&style=flat)](https://www.npmjs.com/package/ng-lab)
 [![dependency status](https://img.shields.io/david/miguelramos/ng-lab.svg?maxAge=3600&style=flat)](https://david-dm.org/miguelramos/ng-lab)
 [![Build Status](https://travis-ci.com/miguelramos/ng-lab.svg?branch=master)](https://travis-ci.com/miguelramos/ng-lab)
 [![license](https://img.shields.io/npm/l/ng-lab.svg?maxAge=3600&style=flat)](https://github.com/miguelramos/ng-lab/LICENSE)
@@ -35,8 +35,9 @@ First check each package describe or just navigate to demo app for more informat
 |-------|----|-----|
 |@ng-lab/support| Many helpers functions | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/support.svg?color=green&style=flat) |
 |@ng-lab/configurator| Service to regulate configurations | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/configurator.svg?color=green&style=flat) |
-|@ng-lab/responsive| Service to observe responsive media queries | In development |
-|@ng-lab/hub| Service to trigger/listener hub events like pub/sub | In development |
+|@ng-lab/responsive| Service to observe responsive media queries | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/responsive.svg?color=green&style=flat) |
+|@ng-lab/hub| Service to trigger/listener hub events like pub/sub | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/hub.svg?color=green&style=flat) |
+|@ng-lab/jwt | Service to control jwt tokens | In Development |
 
 #### For Development
 

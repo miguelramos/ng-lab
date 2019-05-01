@@ -273,6 +273,44 @@
           "styleext": "scss"
         }
       }
+    },
+    "jwt": {
+      "root": "libs/jwt",
+      "sourceRoot": "libs/jwt/src",
+      "projectType": "library",
+      "prefix": "ng-lab",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/jwt/tsconfig.lib.json",
+            "project": "libs/jwt/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/jwt/tsconfig.lib.json",
+              "libs/jwt/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/jwt/jest.config.js",
+            "tsConfig": "libs/jwt/tsconfig.spec.json",
+            "setupFile": "libs/jwt/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

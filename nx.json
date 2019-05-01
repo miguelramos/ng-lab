@@ -25,6 +25,9 @@
     },
     "responsive": {
       "tags": ["scope:lib", "type:functional"]
+    },
+    "jwt": {
+      "tags": ["scope:lib", "type:functional"]
     }
   }
 }
