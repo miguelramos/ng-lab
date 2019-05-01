@@ -58,3 +58,19 @@ export function getUrlHostname(url: string): string {
 export function isValidNumber(n: any): boolean {
   return !isNaN(parseFloat(n)) && isFinite(n) && Number(n) === n;
 }
+
+/**
+ * Flatten a deep object into a one level object with it’s path as key
+ */
+export function flatten(object: object, prefix = '', separator = '.') {
+  return Object.keys(object).reduce((prev, element) => {
+    return object[element] &&
+      typeof object[element] === 'object' &&
+      !Array.isArray(element)
+      ? {
+          ...prev,
+          ...flatten(object[element], `${prefix}${element}${separator}`)
+        }
+      : { ...prev, ...{ [`${prefix}${element}`]: object[element] } };
+  }, {});
+}
