@@ -1,13 +1,14 @@
-## [0.2.5](https://github.com/miguelramos/ng-lab/compare/v0.2.4...v0.2.5) (2019-04-29)
+# [0.3.0](https://github.com/miguelramos/ng-lab/compare/v0.2.5...v0.3.0) (2019-05-01)
+
+
+### Features
+
+* **jwt:** jwt service decoder and expire ([d549dc1](https://github.com/miguelramos/ng-lab/commit/d549dc1)), closes [#26](https://github.com/miguelramos/ng-lab/issues/26)
+* **libs:** single modules  (close [#24](https://github.com/miguelramos/ng-lab/issues/24)) ([30ff701](https://github.com/miguelramos/ng-lab/commit/30ff701))
 
 
 
-## [0.2.4](https://github.com/miguelramos/ng-lab/compare/v0.2.3...v0.2.4) (2019-04-29)
-
-
-### Bug Fixes
-
-* **dependency:** lib dependency ([7e36b93](https://github.com/miguelramos/ng-lab/commit/7e36b93))
+## [0.2.5](https://github.com/miguelramos/ng-lab/compare/v0.2.4...v0.2.5) (2019-04-16)
 
 
 
