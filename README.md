@@ -37,7 +37,8 @@ First check each package describe or just navigate to demo app for more informat
 |@ng-lab/configurator| Service to regulate configurations | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/configurator.svg?color=green&style=flat) |
 |@ng-lab/responsive| Service to observe responsive media queries | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/responsive.svg?color=green&style=flat) |
 |@ng-lab/hub| Service to trigger/listener hub events like pub/sub | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/hub.svg?color=green&style=flat) |
-|@ng-lab/jwt | Service to control jwt tokens | In Development |
+|@ng-lab/jwt | Service to control jwt tokens | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/jwt.svg?color=green&style=flat) |
+|@ng-lab/http-url| Service to define/get routes for http services | In Development |
 
 #### For Development
 
@@ -64,25 +65,9 @@ To perform tests please execute:
 npm test
 ```
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
 ## Deployment
 
-Deployment is done automatic by travis every time master accept a PR on github.
+Deployment is done manually after merge request in master. Just run tool release-it and after publish dist libs.
 
 ## Built With
 
@@ -95,13 +80,13 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/miguelramos/ng-lab/tags). 
 
 ## Authors
 
 * **Miguel Ramos** - *Initial work* - [NgLab](https://github.com/miguelramos/ng-lab)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/miguelramos/ng-lab/contributors) who participated in this project.
 
 ## License
 
