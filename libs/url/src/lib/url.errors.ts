@@ -7,7 +7,7 @@
  */
 import { ErrorDetails } from '@ng-lab/support';
 
-export class HttpUrlResolverValidationError extends Error {
+export class UrlResolverValidationError extends Error {
   /**
    * The validation error type.
    *
@@ -25,18 +25,18 @@ export class HttpUrlResolverValidationError extends Error {
   constructor(type: string, message: string, details?: ErrorDetails) {
     super(message);
 
-    this.name = 'HttpUrlResolverValidationError';
+    this.name = 'UrlResolverValidationError';
     this.stack = new Error().stack;
     this.type = type;
     this.details = details;
 
     // Required in order for error instances to be able to use instanceof.
     // SEE: https://github.com/Microsoft/TypeScript-wiki/blob/master/Breaking-Changes.md
-    (this as any).__proto__ = HttpUrlResolverValidationError.prototype;
+    (this as any).__proto__ = UrlResolverValidationError.prototype;
   }
 }
 
-export class HttpUrlResolverTestError extends Error {
+export class UrlResolverTestError extends Error {
   /**
    * The validation error type.
    *
@@ -54,18 +54,18 @@ export class HttpUrlResolverTestError extends Error {
   constructor(type: string, message: string, details?: ErrorDetails) {
     super(message);
 
-    this.name = 'HttpUrlResolverTestError';
+    this.name = 'UrlResolverTestError';
     this.stack = new Error().stack;
     this.type = type;
     this.details = details;
 
     // Required in order for error instances to be able to use instanceof.
     // SEE: https://github.com/Microsoft/TypeScript-wiki/blob/master/Breaking-Changes.md
-    (this as any).__proto__ = HttpUrlResolverTestError.prototype;
+    (this as any).__proto__ = UrlResolverTestError.prototype;
   }
 }
 
-export class HttpUrlEmptyError extends Error {
+export class UrlEmptyError extends Error {
   /**
    * The validation error type.
    *
@@ -83,13 +83,13 @@ export class HttpUrlEmptyError extends Error {
   constructor(type: string, message: string, details?: ErrorDetails) {
     super(message);
 
-    this.name = 'HttpUrlEmptyError';
+    this.name = 'UrlEmptyError';
     this.stack = new Error().stack;
     this.type = type;
     this.details = details;
 
     // Required in order for error instances to be able to use instanceof.
     // SEE: https://github.com/Microsoft/TypeScript-wiki/blob/master/Breaking-Changes.md
-    (this as any).__proto__ = HttpUrlEmptyError.prototype;
+    (this as any).__proto__ = UrlEmptyError.prototype;
   }
 }

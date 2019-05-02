@@ -37,7 +37,7 @@ jobs:
         - 'cat coverage/libs/jwt/lcov.info | node_modules/coveralls/bin/coveralls.js'
         - 'cat coverage/libs/responsive/lcov.info | node_modules/coveralls/bin/coveralls.js'
         - 'cat coverage/libs/support/lcov.info | node_modules/coveralls/bin/coveralls.js'
-        - 'cat coverage/libs/http/url/lcov.info | node_modules/coveralls/bin/coveralls.js'
+        - 'cat coverage/libs/url/lcov.info | node_modules/coveralls/bin/coveralls.js'
     - stage: building
       script: npm run build
     - stage: deploying

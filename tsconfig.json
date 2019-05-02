@@ -18,7 +18,7 @@
       "@ng-lab/hub": ["libs/hub/src/index.ts"],
       "@ng-lab/responsive": ["libs/responsive/src/index.ts"],
       "@ng-lab/jwt": ["libs/jwt/src/index.ts"],
-      "@ng-lab/http/url": ["libs/http/url/src/index.ts"]
+      "@ng-lab/url": ["libs/url/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

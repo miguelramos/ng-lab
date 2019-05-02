@@ -11,11 +11,11 @@ import { isEmpty, head, find, has } from 'lodash';
 
 import { flatten, GenericType } from '@ng-lab/support';
 import { ConfiguratorService } from '@ng-lab/configurator';
-import { DomainHostType, RouteDescriptorType } from './http-url.typing';
-import { HttpUrlResolverValidationError, HttpUrlResolverTestError, HttpUrlEmptyError } from './http-url.errors';
+import { DomainHostType, RouteDescriptorType } from './url.typing';
+import { UrlResolverValidationError, UrlResolverTestError, UrlEmptyError } from './url.errors';
 
 @Injectable()
-export class HttpUrlService {
+export class UrlService {
   static OPTION_ENDPOINT_NAME = 'ENDPOINTS';
   static OPTIONS_DOMAIN_NAME = 'DOMAINS_API';
 
@@ -33,17 +33,17 @@ export class HttpUrlService {
     const { keys } = Object;
 
     const endpoints = this.configurator.getOptionTree<GenericType>(
-      HttpUrlService.OPTION_ENDPOINT_NAME,
+      UrlService.OPTION_ENDPOINT_NAME,
       false
     );
 
     this.prefixes = this.configurator.getOptionTree<DomainHostType[]>(
-      HttpUrlService.OPTIONS_DOMAIN_NAME,
+      UrlService.OPTIONS_DOMAIN_NAME,
       false
     );
 
     if (isEmpty(endpoints)) {
-      throw new HttpUrlEmptyError('Empty Config', 'ConfiguratorService has no ENDPOINTS and DOMAINS_API entries');
+      throw new UrlEmptyError('Empty Config', 'ConfiguratorService has no ENDPOINTS and DOMAINS_API entries');
     }
 
     const flatEndpoints = flatten(endpoints);
@@ -72,10 +72,6 @@ export class HttpUrlService {
 
   /**
    * Add route to Map.
-   *
-   * @param {string} name
-   * @param {RouteDescriptorType} descriptor
-   * @memberof UrlResolver
    */
   public addRoute(name: string, descriptor: RouteDescriptorType) {
     this.routes.set(name, descriptor);
@@ -93,7 +89,7 @@ export class HttpUrlService {
     const routeDescriptor: RouteDescriptorType = this.routes.get(name);
 
     if (isEmpty(routeDescriptor)) {
-      throw new HttpUrlResolverValidationError(
+      throw new UrlResolverValidationError(
         name,
         'Uri is not setup on mappings.'
       );
@@ -152,7 +148,7 @@ export class HttpUrlService {
         regex: regex.source
       };
     } else {
-      throw new HttpUrlResolverTestError(
+      throw new UrlResolverTestError(
         descriptor.name,
         'UrlResolver test didn\'t match any url.'
       );

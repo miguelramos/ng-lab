@@ -29,7 +29,7 @@
     "jwt": {
       "tags": ["scope:lib", "type:functional"]
     },
-    "http-url": {
+    "url": {
       "tags": ["scope:lib", "type:functional"]
     }
   }
