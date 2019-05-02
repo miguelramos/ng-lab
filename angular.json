@@ -312,25 +312,25 @@
         }
       }
     },
-    "url": {
-      "root": "libs/url",
-      "sourceRoot": "libs/url/src",
+    "http-url": {
+      "root": "libs/http/url",
+      "sourceRoot": "libs/http/url/src",
       "projectType": "library",
       "prefix": "ng-lab",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "libs/url/tsconfig.lib.json",
-            "project": "libs/url/ng-package.json"
+            "tsConfig": "libs/http/url/tsconfig.lib.json",
+            "project": "libs/http/url/ng-package.json"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/url/tsconfig.lib.json",
-              "libs/url/tsconfig.spec.json"
+              "libs/http/url/tsconfig.lib.json",
+              "libs/http/url/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
           }
@@ -338,9 +338,9 @@
         "test": {
           "builder": "@nrwl/builders:jest",
           "options": {
-            "jestConfig": "libs/url/jest.config.js",
-            "tsConfig": "libs/url/tsconfig.spec.json",
-            "setupFile": "libs/url/src/test-setup.ts"
+            "jestConfig": "libs/http/url/jest.config.js",
+            "tsConfig": "libs/http/url/tsconfig.spec.json",
+            "setupFile": "libs/http/url/src/test-setup.ts"
           }
         }
       },

@@ -23,7 +23,7 @@
       "dist/libs/jwt/*.tgz",
       "dist/libs/responsive/*.tgz",
       "dist/libs/support/*.tgz",
-      "dist/libs/url/*.tgz"
+      "dist/libs/http-url/*.tgz"
     ]
   },
   "npm": {

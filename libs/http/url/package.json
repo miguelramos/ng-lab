@@ -1,5 +1,5 @@
 {
-  "name": "@ng-lab/url",
+  "name": "@ng-lab/http-url",
   "version": "0.0.0-PLACEHOLDER",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
@@ -30,6 +30,6 @@
     "angular",
     "library",
     "ng-lab",
-    "url"
+    "http-url"
   ]
 }

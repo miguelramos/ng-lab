@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UrlModule } from './url.module';
-import { UrlService } from './url.service';
-import { UrlEmptyError } from './url.errors';
+import { HttpUrlModule } from './http-url.module';
+import { HttpUrlService } from './http-url.service';
+import { HttpUrlEmptyError } from './http-url.errors';
 import { ConfigOptions, ConfiguratorModule, ConfiguratorService } from '@ng-lab/configurator';
 
-describe('> UrlService', () => {
-  let httpUrlService: UrlService;
+describe('> HttpUrlService', () => {
+  let httpUrlService: HttpUrlService;
   const config: ConfigOptions = {
     ENDPOINTS: {
       PRODUCT: {
@@ -29,10 +29,10 @@ describe('> UrlService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ConfiguratorModule.forRoot(config), UrlModule]
+      imports: [ConfiguratorModule.forRoot(config), HttpUrlModule]
     }).compileComponents();
 
-    httpUrlService = TestBed.get(UrlService, 'NOT FOUND');
+    httpUrlService = TestBed.get(HttpUrlService, 'NOT FOUND');
   });
 
   it('# Should get defined urls', () => {
@@ -52,9 +52,9 @@ describe('> UrlService', () => {
   it('# Should throw if ConfiguratorService has no ENDPOINTS property', () => {
     try {
       // tslint:disable-next-line:no-unused-expression
-      new UrlService(new ConfiguratorService())
+      new HttpUrlService(new ConfiguratorService())
     } catch (error) {
-      expect(error).toThrow(UrlEmptyError);
+      expect(error).toThrow(HttpUrlEmptyError);
     }
   });
 });

@@ -1,14 +1,14 @@
 import { async, TestBed } from '@angular/core/testing';
-import { UrlModule } from './url.module';
+import { HttpUrlModule } from './http-url.module';
 
-describe('UrlModule', () => {
+describe('HttpUrlModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [UrlModule]
+      imports: [HttpUrlModule]
     }).compileComponents();
   }));
 
   it('should create', () => {
-    expect(UrlModule).toBeDefined();
+    expect(HttpUrlModule).toBeDefined();
   });
 });
