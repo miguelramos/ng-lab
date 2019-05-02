@@ -1,3 +1,12 @@
+# [0.4.0](https://github.com/miguelramos/ng-lab/compare/v0.3.0...v0.4.0) (2019-05-02)
+
+
+### Features
+
+* **http:** initial http tools ([42887f9](https://github.com/miguelramos/ng-lab/commit/42887f9)), closes [#27](https://github.com/miguelramos/ng-lab/issues/27)
+
+
+
 # [0.3.0](https://github.com/miguelramos/ng-lab/compare/v0.2.5...v0.3.0) (2019-05-01)
 
 
