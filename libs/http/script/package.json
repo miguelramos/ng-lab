@@ -1,0 +1,32 @@
+{
+  "name": "@ng-lab/http-script",
+  "version": "0.0.0-PLACEHOLDER",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
+  "author": {
+    "name": "Miguel Ramos",
+    "email": "miguel.marques.ramos@gmail.com",
+    "url": "https://ng-lab.github.com/"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miguelramos/ng-lab"
+  },
+  "homepage": "https://github.com/miguelramos/ng-lab",
+  "bugs": {
+    "url": "https://github.com/miguelramos/ng-lab/issues"
+  },
+  "keywords": [
+    "angular",
+    "library",
+    "ng-lab",
+    "http-script"
+  ]
+}

@@ -8,6 +8,6 @@ export const OPTIONS_TOKEN = new InjectionToken<ConfigOptions>(
 export const CONFIG_DEFAULT_OPTIONS: ConfigOptions = {
   DEFAULT_LANG: 'pt',
   ENDPOINTS: {
-    LOCAL: null
+    LOCAL: ''
   }
 };
