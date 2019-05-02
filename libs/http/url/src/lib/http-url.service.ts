@@ -72,10 +72,6 @@ export class HttpUrlService {
 
   /**
    * Add route to Map.
-   *
-   * @param {string} name
-   * @param {RouteDescriptorType} descriptor
-   * @memberof UrlResolver
    */
   public addRoute(name: string, descriptor: RouteDescriptorType) {
     this.routes.set(name, descriptor);
