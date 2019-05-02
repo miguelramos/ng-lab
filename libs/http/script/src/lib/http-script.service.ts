@@ -16,11 +16,13 @@ import { ScriptInterface } from './http-script.typing';
 @Injectable()
 export class HttpScriptLoaderService {
   private _scripts: ScriptInterface[] = [];
+  private _doc?: Document;
 
   constructor(
-    @Inject(DOCUMENT) private _doc: HTMLDocument,
+    @Inject(DOCUMENT) doc: any,
     @Inject(SCRIPTS_LOADER) private _loadScripts: ScriptInterface[]
   ) {
+    this._doc = doc as Document;
     this._initLoader();
   }
 
