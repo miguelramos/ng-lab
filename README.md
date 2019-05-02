@@ -38,7 +38,8 @@ First check each package describe or just navigate to demo app for more informat
 |@ng-lab/responsive| Service to observe responsive media queries | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/responsive.svg?color=green&style=flat) |
 |@ng-lab/hub| Service to trigger/listener hub events like pub/sub | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/hub.svg?color=green&style=flat) |
 |@ng-lab/jwt | Service to control jwt tokens | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/jwt.svg?color=green&style=flat) |
-|@ng-lab/http-url| Service to define/get routes for http services | In Development |
+|@ng-lab/http-url| Service to define/get routes for http services | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/http-url.svg?color=green&style=flat) |
+|@ng-lab/http-script| Service to load scripts and define them on body | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/http-script.svg?color=green&style=flat) |
 
 #### For Development
 
