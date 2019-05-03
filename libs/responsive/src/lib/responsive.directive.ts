@@ -4,6 +4,8 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://www.ng-lab.com/license
+ *
+ * Directive to declare once on top root to listen for changes on window resize.
  */
 import {
   Output,
@@ -44,24 +46,58 @@ export const RESPONSIVE_BREAKPOINTS_TOKEN = new InjectionToken<Breakpoints>(
   exportAs: 'ngResponsive'
 })
 export class ResponsiveBreakpointDirective implements AfterViewInit {
-  breakpoint: string;
 
-  @Output() responsiveChange = new Subject<{ width: number; key: string }>();
+  /**
+   * Property to set endpoint reference
+   *
+   * @memberof ResponsiveBreakpointDirective
+   */
+  public breakpoint: string;
 
+  /**
+   * Property to subscribe for changes. It triggers
+   * every time browser window is resized.
+   *
+   * @memberof ResponsiveBreakpointDirective
+   */
+  @Output()
+  public responsiveChange = new Subject<{ width: number; key: string }>();
+
+  /**
+   * Property that listen window resize event.
+   *
+   * @memberof ResponsiveBreakpointDirective
+   */
   @HostListener('window:resize', ['$event.target.innerWidth'])
-  onResize(width: number) {
+  public onResize(width: number) {
     this.gridReference(width);
     this.responsiveChange.next({ width: width, key: this.breakpoint });
   }
 
+  /**
+   * Creates an instance of ResponsiveBreakpointDirective.
+   *
+   * @memberof ResponsiveBreakpointDirective
+   */
   constructor(
     @Inject(RESPONSIVE_BREAKPOINTS_TOKEN) private breakpoints: Breakpoints
   ) {}
 
+  /**
+   * After view inited register the resize event listener.
+   *
+   * @memberof ResponsiveBreakpointDirective
+   */
   ngAfterViewInit() {
     this.onResize(window.innerWidth);
   }
 
+  /**
+   * Check window breakpoint measures and define
+   * breakpoint property reference.
+   *
+   * @memberof ResponsiveBreakpointDirective
+   */
   private gridReference(width: number) {
     if (between(width, 0, this.breakpoints.XS)) {
       this.breakpoint = 'XS';
