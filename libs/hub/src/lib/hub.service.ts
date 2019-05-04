@@ -11,24 +11,41 @@ import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
 
 import { HubModule } from './hub.module';
+import { HubServiceActionInterface, fn } from './hub.typing';
 
-type fn = (params: any) => any;
-
-export interface HubServiceActionInterface {
-  event: string;
-  data: any;
-  callback: fn;
-  action: 'emit' | 'on' | 'off';
-}
-
+/**
+ * @description
+ * HubService is a pure publication/subscriber event.
+ *
+ * @ngModule HubModule
+ * @publicApi
+ */
 @Injectable({
   providedIn: HubModule
 })
 export class HubService {
+  /**
+   * @description
+   * Map collection of events
+   */
   private readonly provision: Map<string, [] | [fn]> = new Map();
 
+  /**
+   * @description
+   * Observer of events
+   *
+   * @memberof HubService
+   */
   public observe = new ReplaySubject<HubServiceActionInterface>();
 
+  /**
+   * @description
+   * Emits and event on the hub
+   *
+   * @param event Event name
+   * @param data Dato of the event
+   * @memberof HubService
+   */
   public emit(event: string, data: any) {
     const provision = this.provision.get(event) as [fn];
 
@@ -43,6 +60,14 @@ export class HubService {
     });
   }
 
+  /**
+   * @description
+   * Listener when event is trigger
+   *
+   * @param event Event name
+   * @param cb Callback to execute
+   * @memberof HubService
+   */
   public on(event: string, cb: fn) {
     if (!this.provision.has(event)) {
       this.initMap(event);
@@ -55,6 +80,14 @@ export class HubService {
     this.observe.next({ event: event, callback: cb, data: null, action: 'on' });
   }
 
+  /**
+   * @description
+   * Deactivate listeners on event
+   *
+   * @param event Event name
+   * @param cb Callback executed
+   * @memberof HubService
+   */
   public off(event: string, cb: fn) {
     const provision = this.provision.get(event) as [fn];
 
@@ -73,23 +106,54 @@ export class HubService {
     });
   }
 
-  public clear() {
+  /**
+   * @description
+   * Clear all registered events
+   */
+  public clear(): void {
     this.provision.clear();
   }
 
-  public hasEvent(event: string) {
+  /**
+   * @description
+   * Verify if event exist
+   *
+   * @param event Event name
+   * @memberof HubService
+   */
+  public hasEvent(event: string): boolean {
     return this.provision.has(event);
   }
 
-  public size() {
+  /**
+   * @description
+   * Size of map events
+   *
+   * @memberof HubService
+   */
+  public size(): number {
     return this.provision.size;
   }
 
+  /**
+   * @description
+   * Get events callbak
+   *
+   * @param event Event name
+   * @memberof HubService
+   */
   public getEventFunctions(event: string): [fn] {
     return this.provision.get(event) as [fn];
   }
 
-  protected initMap(event: string) {
+  /**
+   * @description
+   * Init map events collection
+   *
+   * @param event Event name
+   * @memberof HubService
+   */
+  protected initMap(event: string): void {
     this.provision.set(event, []);
   }
 }

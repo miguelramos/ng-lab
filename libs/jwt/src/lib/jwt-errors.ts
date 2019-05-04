@@ -9,6 +9,7 @@ import { ErrorDetails } from '@ng-lab/support';
 
 export class JWTIllegalBaseDecodeError extends Error {
   /**
+   * @description
    * The validation error type.
    *
    * @see PropertyError
@@ -17,6 +18,7 @@ export class JWTIllegalBaseDecodeError extends Error {
   details: ErrorDetails | undefined;
 
   /**
+   * @description
    * Construct a property validation error.
    *
    * @param type The validation error type.
@@ -38,6 +40,7 @@ export class JWTIllegalBaseDecodeError extends Error {
 
 export class JWTAtobDecodeError extends Error {
   /**
+   * @description
    * The validation error type.
    *
    * @see PropertyError
@@ -46,6 +49,7 @@ export class JWTAtobDecodeError extends Error {
   details: ErrorDetails | undefined;
 
   /**
+   * @description
    * Construct a property validation error.
    *
    * @param type The validation error type.
@@ -67,6 +71,7 @@ export class JWTAtobDecodeError extends Error {
 
 export class JWTSplitDecodeError extends Error {
   /**
+   * @description
    * The validation error type.
    *
    * @see PropertyError
@@ -75,6 +80,7 @@ export class JWTSplitDecodeError extends Error {
   details: ErrorDetails | undefined;
 
   /**
+   * @description
    * Construct a property validation error.
    *
    * @param type The validation error type.

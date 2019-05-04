@@ -1,3 +1,5 @@
+import { GenericType } from '@ng-lab/support';
+
 export interface DomainHostType {
   HOST: string;
   KEY: string;
@@ -9,4 +11,12 @@ export interface RouteDescriptorType {
   prefix: string;
   uri: string;
   endpoint: string;
+}
+
+export interface RouteResolverType {
+  name: string;
+  host: string;
+  url: string;
+  params: GenericType;
+  regex: string;
 }

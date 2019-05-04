@@ -4,42 +4,36 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://www.ng-lab.com/license
- *
- * Directive to declare once on top root to listen for changes on window resize.
  */
 import {
   Output,
   Directive,
   HostListener,
   AfterViewInit,
-  InjectionToken,
   Inject
 } from '@angular/core';
 
 import { Subject } from 'rxjs';
 
 import { between } from '@ng-lab/support';
+import { Breakpoints } from './responsive.typing';
+import { RESPONSIVE_BREAKPOINTS_TOKEN } from './responsive.token';
 
-export interface Breakpoints {
-  XS: number;
-  SM: number;
-  MD: number;
-  LG: number;
-  XL: number;
-}
-
-export const DEFAULT_RESPONSIVE_BREAKPOINTS_TOKEN: Breakpoints = {
-  XS: 575,
-  SM: 767,
-  MD: 991,
-  LG: 1199,
-  XL: 1200
-};
-
-export const RESPONSIVE_BREAKPOINTS_TOKEN = new InjectionToken<Breakpoints>(
-  '[RESPONSIVE] Breakpoints definitions.'
-);
-
+/**
+ * @description
+ * Directive to declare once on top root to listen for changes on window resize.
+ *
+ * @usageNotes
+ *
+ * To use just declare the directive on html tag.
+ *
+ * ```html
+ * <p ngResponsive>A responsive directive</p>
+ * ```
+ *
+ * @ngModule ResponsiveModule
+ * @publicApi
+ */
 @Directive({
   // tslint:disable-next-line:directive-selector
   selector: 'ngResponsive, [ngResponsive]',
@@ -48,6 +42,7 @@ export const RESPONSIVE_BREAKPOINTS_TOKEN = new InjectionToken<Breakpoints>(
 export class ResponsiveBreakpointDirective implements AfterViewInit {
 
   /**
+   * @description
    * Property to set endpoint reference
    *
    * @memberof ResponsiveBreakpointDirective
@@ -64,8 +59,10 @@ export class ResponsiveBreakpointDirective implements AfterViewInit {
   public responsiveChange = new Subject<{ width: number; key: string }>();
 
   /**
+   * @description
    * Property that listen window resize event.
    *
+   * @param width Width window size
    * @memberof ResponsiveBreakpointDirective
    */
   @HostListener('window:resize', ['$event.target.innerWidth'])
@@ -75,6 +72,7 @@ export class ResponsiveBreakpointDirective implements AfterViewInit {
   }
 
   /**
+   * @description
    * Creates an instance of ResponsiveBreakpointDirective.
    *
    * @memberof ResponsiveBreakpointDirective
@@ -84,6 +82,7 @@ export class ResponsiveBreakpointDirective implements AfterViewInit {
   ) {}
 
   /**
+   * @description
    * After view inited register the resize event listener.
    *
    * @memberof ResponsiveBreakpointDirective
@@ -93,6 +92,7 @@ export class ResponsiveBreakpointDirective implements AfterViewInit {
   }
 
   /**
+   * @description
    * Check window breakpoint measures and define
    * breakpoint property reference.
    *
