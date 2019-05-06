@@ -52,7 +52,8 @@
     "dep-graph": "./node_modules/.bin/nx dep-graph",
     "help": "./node_modules/.bin/nx help",
     "commit": "git-cz",
-    "deploy": "ng build ng-lab-demo --aot --baseHref=/ng-lab/ --buildOptimizer"
+    "deploy": "ng build ng-lab-demo --aot --baseHref=/ng-lab/ --buildOptimizer",
+    "release": "release-it --config=./.release-it.json --increment=minor --verbose"
   },
   "private": true,
   "dependencies": {
