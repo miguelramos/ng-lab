@@ -13,9 +13,30 @@ import { Observable, Observer } from 'rxjs';
 import { SCRIPTS_LOADER } from './http-script.token';
 import { ScriptInterface } from './http-script.typing';
 
+/**
+ * @description
+ * Service to load remote js scripts
+ *
+ * @ngModule HttpScriptModule
+ * @publicApi
+ */
 @Injectable()
 export class HttpScriptLoaderService {
+
+  /**
+   * @description
+   * Collection of registered scripts
+   *
+   * @memberof HttpScriptLoaderService
+   */
   private _scripts: ScriptInterface[] = [];
+
+  /**
+   * @description
+   * Property for HTMLDocument
+   *
+   * @memberof HttpScriptLoaderService
+   */
   private _doc?: Document;
 
   constructor(
@@ -26,6 +47,13 @@ export class HttpScriptLoaderService {
     this._initLoader();
   }
 
+  /**
+   * @description
+   * Set a ScriptInterface to be loaded
+   *
+   * @param script Script object to load
+   * @memberof HttpScriptLoaderService
+   */
   public load(script: ScriptInterface): Observable<ScriptInterface> {
     return new Observable<ScriptInterface>(
       (observer: Observer<ScriptInterface>) => {
@@ -42,20 +70,48 @@ export class HttpScriptLoaderService {
     );
   }
 
+  /**
+   * @description
+   * Check if script is present on collection
+   *
+   * @param name Script name
+   * @memberof HttpScriptLoaderService
+   */
   public hasScript(name: string): boolean {
     return !!this._scripts.find(script => script.name === name);
   }
 
+  /**
+   * @description
+   * Check if script was loaded
+   *
+   * @param name Script name
+   * @memberof HttpScriptLoaderService
+   */
   public isLoaded(name: string): boolean {
     const script = this._scripts.find(js => js.name === name);
 
     return script ? script.loaded : false;
   }
 
+  /**
+   * @description
+   * Load initial registered scripts
+   *
+   * @memberof HttpScriptLoaderService
+   */
   private _initLoader(): void {
     this._loadScripts.map(script => this.load(script).subscribe());
   }
 
+  /**
+   * @description
+   * Creates the header script tag
+   *
+   * @param script ScriptInterface
+   * @param observer Observer<ScriptInterface>
+   * @memberof HttpScriptLoaderService
+   */
   private _createHeaderScriptTag(
     script: ScriptInterface,
     observer: Observer<ScriptInterface>

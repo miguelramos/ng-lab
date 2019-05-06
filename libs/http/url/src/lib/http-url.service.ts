@@ -7,7 +7,7 @@
  */
 import { Injectable, Inject } from '@angular/core';
 
-import { isEmpty, head, find, has } from 'lodash';
+import { isEmpty, head, find } from 'lodash';
 
 import { flatten, GenericType } from '@ng-lab/support';
 import { ConfiguratorService } from '@ng-lab/configurator';
