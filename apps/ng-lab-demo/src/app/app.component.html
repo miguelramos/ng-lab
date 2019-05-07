@@ -3,7 +3,8 @@
   [width]="'300px'"
   class="ui-sidebar"
   [uiLayoutResizer]="edgeSettings"
-  ngResponsive (responsiveChange)="handlerResponsiveChange($event)"
+  ngResponsive
+  (responsiveChange)="handlerResponsiveChange($event)"
 >
   <header class="ui-sidebar__header">
     <img class="logo" src="./assets/lab-logo.svg" alt="@ng-lab" />
@@ -11,9 +12,10 @@
   <nav class="ui-sidebar__nav">
     <h3 class="ui-sidebar__title">Packages</h3>
     <p style="margin-top: 0.2rem;">
-        Responsive Breakpoint: {{ (responsive$|async)?.key }} with size - {{(responsive$|async)?.width }} <br>
-        <i>Resize your window to see breakpoints</i>
-      </p>
+      Responsive Breakpoint: {{ (responsive$ | async)?.key }} with size -
+      {{ (responsive$ | async)?.width }} <br />
+      <i>Resize your window to see breakpoints</i>
+    </p>
     <ul>
       <li>
         <a>Configurator</a>

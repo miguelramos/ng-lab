@@ -38,6 +38,7 @@ export class AppComponent {
     configuratorService.hasOption('settings.with.deep.notation');
     `
   });
+
   responsive$: Observable<ResponsiveChangeInterface>;
 
   public handlerResponsiveChange(change: ResponsiveChangeInterface): void {
