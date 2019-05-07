@@ -34,6 +34,9 @@
     },
     "http-script": {
       "tags": ["scope:lib", "type:functional"]
+    },
+    "layout": {
+      "tags": ["scope:lib"]
     }
   }
 }

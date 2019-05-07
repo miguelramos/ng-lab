@@ -2,14 +2,19 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 
 import { ResponsiveBreakpointDirective } from './responsive.directive';
-import { RESPONSIVE_BREAKPOINTS_TOKEN, DEFAULT_RESPONSIVE_BREAKPOINTS_TOKEN } from './responsive.token';
+import {
+  RESPONSIVE_BREAKPOINTS_TOKEN,
+  DEFAULT_RESPONSIVE_BREAKPOINTS_TOKEN
+} from './responsive.token';
 
 @Component({
+  selector: 'ng-lab-dumb',
   template: '<p ngResponsive>Testing Directives is awesome!</p>'
 })
-class TestComponent {
+export class TestComponent {
   @ViewChild(ResponsiveBreakpointDirective, {
-    read: ResponsiveBreakpointDirective
+    read: ResponsiveBreakpointDirective,
+    static: true
   })
   responsiveDirective: ResponsiveBreakpointDirective;
 

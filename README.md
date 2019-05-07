@@ -31,15 +31,16 @@ These instructions will get you a copy of the project up and running on your loc
 
 First check each package describe or just navigate to demo app for more information
 
-|Package|Info|Badge|
-|-------|----|-----|
-|@ng-lab/support| Many helpers functions | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/support.svg?color=green&style=flat) |
-|@ng-lab/configurator| Service to regulate configurations | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/configurator.svg?color=green&style=flat) |
-|@ng-lab/responsive| Service to observe responsive media queries | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/responsive.svg?color=green&style=flat) |
-|@ng-lab/hub| Service to trigger/listener hub events like pub/sub | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/hub.svg?color=green&style=flat) |
-|@ng-lab/jwt | Service to control jwt tokens | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/jwt.svg?color=green&style=flat) |
-|@ng-lab/http-url| Service to define/get routes for http services | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/http-url.svg?color=green&style=flat) |
-|@ng-lab/http-script| Service to load scripts and define them on body | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/http-script.svg?color=green&style=flat) |
+| Package              | Info                                                | Badge                                                                                         |
+| -------------------- | --------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| @ng-lab/support      | Many helpers functions                              | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/support.svg?color=green&style=flat)      |
+| @ng-lab/configurator | Service to regulate configurations                  | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/configurator.svg?color=green&style=flat) |
+| @ng-lab/responsive   | Service to observe responsive media queries         | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/responsive.svg?color=green&style=flat)   |
+| @ng-lab/hub          | Service to trigger/listener hub events like pub/sub | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/hub.svg?color=green&style=flat)          |
+| @ng-lab/jwt          | Service to control jwt tokens                       | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/jwt.svg?color=green&style=flat)          |
+| @ng-lab/http-url     | Service to define/get routes for http services      | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/http-url.svg?color=green&style=flat)     |
+| @ng-lab/http-script  | Service to load scripts and define them on body     | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/http-script.svg?color=green&style=flat)  |
+| @ng-lab/layout       | Create flexbox areas for any layout type            | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/layout.svg?color=green&style=flat)       |
 
 #### For Development
 
@@ -72,8 +73,8 @@ Deployment is done manually after merge request in master. Just run tool release
 
 ## Built With
 
-* [Angular](https://angular.io/) - The web framework used
-* [Nx](https://nx.dev) - Angular CLI power-ups for modern development
+- [Angular](https://angular.io/) - The web framework used
+- [Nx](https://nx.dev) - Angular CLI power-ups for modern development
 
 ## Contributing
 
@@ -81,11 +82,11 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/miguelramos/ng-lab/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/miguelramos/ng-lab/tags).
 
 ## Authors
 
-* **Miguel Ramos** - *Initial work* - [NgLab](https://github.com/miguelramos/ng-lab)
+- **Miguel Ramos** - _Initial work_ - [NgLab](https://github.com/miguelramos/ng-lab)
 
 See also the list of [contributors](https://github.com/miguelramos/ng-lab/contributors) who participated in this project.
 
@@ -95,6 +96,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Platforms that i built like... (can't tell you) :)
-
-
+- Platforms that i built like... (can't tell you) :)

@@ -27,7 +27,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/support/jest.config.js",
             "tsConfig": "libs/support/tsconfig.spec.json",
@@ -64,7 +64,10 @@
               "apps/ng-lab-demo/src/favicon.ico",
               "apps/ng-lab-demo/src/assets"
             ],
-            "styles": ["apps/ng-lab-demo/src/styles.scss"],
+            "styles": [
+              "apps/ng-lab-demo/src/styles.scss",
+              "node_modules/prismjs/themes/prism.css"
+            ],
             "scripts": [],
             "stylePreprocessorOptions": {
               "includePaths": ["./node_modules"]
@@ -125,7 +128,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/ng-lab-demo/jest.config.js",
             "tsConfig": "apps/ng-lab-demo/tsconfig.spec.json",
@@ -184,7 +187,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/configurator/jest.config.js",
             "tsConfig": "libs/configurator/tsconfig.spec.json",
@@ -222,7 +225,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/hub/jest.config.js",
             "tsConfig": "libs/hub/tsconfig.spec.json",
@@ -260,7 +263,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/responsive/jest.config.js",
             "tsConfig": "libs/responsive/tsconfig.spec.json",
@@ -298,7 +301,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/jwt/jest.config.js",
             "tsConfig": "libs/jwt/tsconfig.spec.json",
@@ -336,7 +339,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/http/url/jest.config.js",
             "tsConfig": "libs/http/url/tsconfig.spec.json",
@@ -374,11 +377,49 @@
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/http/script/jest.config.js",
             "tsConfig": "libs/http/script/tsconfig.spec.json",
             "setupFile": "libs/http/script/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "layout": {
+      "root": "libs/layout",
+      "sourceRoot": "libs/layout/src",
+      "projectType": "library",
+      "prefix": "ui",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/layout/tsconfig.lib.json",
+            "project": "libs/layout/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/layout/tsconfig.lib.json",
+              "libs/layout/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/layout/jest.config.js",
+            "tsConfig": "libs/layout/tsconfig.spec.json",
+            "setupFile": "libs/layout/src/test-setup.ts"
           }
         }
       },
@@ -394,7 +435,7 @@
       "typescriptMismatch": false,
       "versionMismatch": false
     },
-    "defaultCollection": "@nrwl/schematics",
+    "defaultCollection": "@nrwl/angular",
     "packageManager": "npm"
   },
   "schematics": {

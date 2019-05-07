@@ -7,8 +7,8 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es5",
-    "module": "es2015",
+    "target": "es2015",
+    "module": "esnext",
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2017", "dom"],
     "baseUrl": ".",
@@ -19,8 +19,10 @@
       "@ng-lab/responsive": ["libs/responsive/src/index.ts"],
       "@ng-lab/jwt": ["libs/jwt/src/index.ts"],
       "@ng-lab/http/url": ["libs/http/url/src/index.ts"],
-      "@ng-lab/http/script": ["libs/http/script/src/index.ts"]
-    }
+      "@ng-lab/http/script": ["libs/http/script/src/index.ts"],
+      "@ng-lab/layout": ["libs/layout/src/index.ts"]
+    },
+    "rootDir": "."
   },
   "exclude": ["node_modules", "tmp"]
 }
