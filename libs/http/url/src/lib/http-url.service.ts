@@ -7,26 +7,66 @@
  */
 import { Injectable, Inject } from '@angular/core';
 
-import { isEmpty, head, find, has } from 'lodash';
+import { isEmpty, head, find } from 'lodash';
 
 import { flatten, GenericType } from '@ng-lab/support';
 import { ConfiguratorService } from '@ng-lab/configurator';
-import { DomainHostType, RouteDescriptorType } from './http-url.typing';
+import { DomainHostType, RouteDescriptorType, RouteResolverType } from './http-url.typing';
 import { HttpUrlResolverValidationError, HttpUrlResolverTestError, HttpUrlEmptyError } from './http-url.errors';
 
+/**
+ * @description
+ * Service to register urls simple and with parameters
+ *
+ * @ngModule HttpUrlModule
+ * @publicApi
+ */
 @Injectable()
 export class HttpUrlService {
+  /**
+   * @description
+   * Property key to find routes in `ConfiguratorService`
+   *
+   * @memberof HttpUrlService
+   */
   static OPTION_ENDPOINT_NAME = 'ENDPOINTS';
+  /**
+   * @description
+   * Property key to find domains in `ConfiguratorService`
+   *
+   * @memberof HttpUrlService
+   */
   static OPTIONS_DOMAIN_NAME = 'DOMAINS_API';
 
+  /**
+   * @description
+   * Collection of domains to prefix urls
+   *
+   * @memberof HttpUrlService
+   */
   protected prefixes: DomainHostType[] = [];
+
+  /**
+   * @description
+   * Collection of routes registered
+   *
+   * @memberof HttpUrlService
+   */
   protected routes: Map<string, RouteDescriptorType> = new Map();
 
+  /**
+   * @description
+   * Creates an instance of HttpUrlService.
+   *
+   * @param configurator ConfiguratorService instance
+   * @memberof HttpUrlService
+   */
   constructor(@Inject(ConfiguratorService) private configurator: ConfiguratorService) {
     this.init();
   }
 
   /**
+   * @description
    * Init setup for resolving routes collection.
    */
   private init(): void {
@@ -54,9 +94,13 @@ export class HttpUrlService {
   }
 
   /**
+   * @description
    * Setup regex routing and add it to Map.
+   *
+   * @param name Route name
+   * @para uri Url path
    */
-  protected setupRoute(name: string, uri: string) {
+  protected setupRoute(name: string, uri: string): void {
     const verbal = new RegExp(/^@\w+\:/);
     const search = head(verbal.exec(uri)) || '';
 
@@ -71,17 +115,26 @@ export class HttpUrlService {
   }
 
   /**
+   * @description
    * Add route to Map.
+   *
+   * @param name Route name/key
+   * @param descriptor Route object properties
    */
   public addRoute(name: string, descriptor: RouteDescriptorType) {
     this.routes.set(name, descriptor);
   }
 
   /**
+   * @description
    * Get the route from Map and resolve domain host. Pass parameters
    * to complete dynamic arguments on route, even overriding domain host is possible.
+   *
+   * @param name Route name/key
+   * @param params Route parameters
+   * @param domain Route mai domain
    */
-  public get(name: string, params: GenericType = null, domain: string = null) {
+  public get(name: string, params: GenericType = null, domain: string = null): string {
     /*if (name.includes('.')) {
       name = name.substr(name.indexOf('.') + 1);
     }*/
@@ -100,14 +153,26 @@ export class HttpUrlService {
     }
   }
 
-  public hasRoute(name: string) {
+  /**
+   * @description
+   * Check if route exist in the collection
+   *
+   * @param name Route name/key
+   * @memberof HttpUrlService
+   */
+  public hasRoute(name: string): boolean {
     return this.routes.has(name);
   }
 
   /**
+   * @description
    * Resolve host domain and route.
+   *
+   * @param descriptor Route object properties
+   * @param args Route arguments
+   * @param host Route host domain
    */
-  protected resolve(descriptor: RouteDescriptorType, args: GenericType, host = '') {
+  protected resolve(descriptor: RouteDescriptorType, args: GenericType, host = ''): RouteResolverType {
     const regex = this.expression(descriptor.endpoint);
     const test = regex.test(descriptor.endpoint);
     const prefix = descriptor.prefix.substring(0, descriptor.prefix.length - 1);
@@ -138,7 +203,7 @@ export class HttpUrlService {
       const domainHost = isEmpty(host) ? domain.HOST || '' : host;
       const domainOrigin = domain.ORIGIN ? window.location.origin : '';
 
-      return {
+      return <RouteResolverType>{
         name: descriptor.name,
         host: domainHost,
         url: url
@@ -156,9 +221,12 @@ export class HttpUrlService {
   }
 
   /**
+   * @description
    * Macth route arguments.
+   *
+   * @param route Route path
    */
-  protected expression(route: string) {
+  protected expression(route: string): RegExp {
     const splatParam = /\*\w+/g;
     const namedParam = /(\(\?)?:\w+/g;
     const optionalParam = /\((.*?)\)/g;

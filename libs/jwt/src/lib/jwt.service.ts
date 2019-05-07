@@ -10,10 +10,25 @@ import { Injectable } from '@angular/core';
 import { JwtModule } from './jwt.module';
 import { JWTIllegalBaseDecodeError, JWTAtobDecodeError, JWTSplitDecodeError } from './jwt-errors';
 
+/**
+ * @description
+ * Service to decode JWT tokens and check expiration timing.
+ *
+ * @ngModule JwtModule
+ * @publicApi
+ */
 @Injectable({
   providedIn: JwtModule
 })
 export class JWTService {
+
+  /**
+   * @description
+   * Method to decode a base64 string.
+   *
+   * @param str String to decode
+   * @memberof JWTService
+   */
   public urlBase64Decode(str: string): string {
     let output = str.replace(/-/g, '+').replace(/_/g, '/');
     switch (output.length % 4) {
@@ -35,7 +50,14 @@ export class JWTService {
     return this.b64DecodeUnicode(output);
   }
 
-  // credits for decoder goes to https://github.com/atk
+  /**
+   * @description
+   * Decode string
+   *
+   * @credits credits for decoder goes to https://github.com/atk
+   * @param str Enoded string
+   * @memberof JWTService
+   */
   private b64decode(str: string): string {
     const chars =
       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
@@ -71,7 +93,13 @@ export class JWTService {
     return output;
   }
 
-  // https://developer.mozilla.org/en/docs/Web/API/WindowBase64/Base64_encoding_and_decoding#The_Unicode_Problem
+  /**
+   * @description
+   * Prototype for decoding
+   *
+   * @param str Encode string
+   * @memberof JWTService
+   */
   private b64DecodeUnicode(str: any) {
     return decodeURIComponent(
       Array.prototype.map
@@ -82,6 +110,13 @@ export class JWTService {
     );
   }
 
+  /**
+   * @description
+   * Method to decode jwt token
+   *
+   * @param token Encoded token string
+   * @memberof JWTService
+   */
   public decodeToken(token: string): any {
     const parts = token.split('.');
 
@@ -98,6 +133,13 @@ export class JWTService {
     return JSON.parse(decoded);
   }
 
+  /**
+   * @description
+   * Get expiration date from token
+   *
+   * @param token Encoded token string
+   * @memberof JWTService
+   */
   public getTokenExpirationDate(token: string): Date | null {
     let decoded: any;
     decoded = this.decodeToken(token);
@@ -112,6 +154,14 @@ export class JWTService {
     return date;
   }
 
+  /**
+   * @description
+   * Verify it token has expired
+   *
+   * @param token Encoded token string
+   * @param offsetSeconds Delay
+   * @memberof JWTService
+   */
   public isTokenExpired(token: string, offsetSeconds?: number): boolean {
     const date = this.getTokenExpirationDate(token);
     offsetSeconds = offsetSeconds || 0;

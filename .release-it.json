@@ -10,8 +10,8 @@
     "commitArgs": "-S --no-verify",
     "tag": true,
     "tagAnnotation": "Packages released with version: ${version}",
-    "tagArgs": "",
-    "push": false
+    "tagArgs": "-S",
+    "push": true
   },
   "github": {
     "release": true,
@@ -29,5 +29,11 @@
   },
   "npm": {
     "publish": false
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "angular",
+      "infile": "CHANGELOG.md"
+    }
   }
 }

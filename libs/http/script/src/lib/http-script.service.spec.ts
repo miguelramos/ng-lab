@@ -32,8 +32,26 @@ describe('> HttpScriptLoaderService', () => {
     httpScriptService = TestBed.get(HttpScriptLoaderService, 'NOT FOUND');
   });
 
-  xit('# Should have loaded provided scripts', () => {
+  it('# Should have register scripts', () => {
     expect(httpScriptService.hasScript('analytics')).toBeTruthy();
     expect(httpScriptService.hasScript('ace')).toBeTruthy();
+  });
+
+  it('# Should load script and trigger load event', (done) => {
+    jest.setTimeout(15000);
+
+    httpScriptService.load({
+      name: 'animejs',
+      src: 'https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js',
+      loaded: false
+    }).subscribe(() => {
+      expect(httpScriptService.isLoaded('animejs')).toBeTruthy();
+      done();
+    });
+
+    const tags = document.getElementsByTagName('script');
+    const animejsTag = tags.item(tags.length - 1);
+
+    animejsTag.dispatchEvent(new Event('load'));
   });
 });

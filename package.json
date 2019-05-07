@@ -52,7 +52,8 @@
     "dep-graph": "./node_modules/.bin/nx dep-graph",
     "help": "./node_modules/.bin/nx help",
     "commit": "git-cz",
-    "deploy": "ng build ng-lab-demo --aot --baseHref=/ng-lab/ --buildOptimizer"
+    "deploy": "ng build ng-lab-demo --aot --baseHref=/ng-lab/ --buildOptimizer",
+    "release": "release-it --config=./.release-it.json --increment=minor --verbose"
   },
   "private": true,
   "dependencies": {
@@ -75,7 +76,6 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "jest-preset-angular": "7.0.0",
     "@angular-devkit/build-angular": "~0.13.0",
     "@angular-devkit/build-ng-packagr": "~0.11.0",
     "@angular/cli": "7.3.1",
@@ -86,6 +86,7 @@
     "@ngrx/schematics": "7.2.0",
     "@nrwl/builders": "7.8.1",
     "@nrwl/schematics": "7.8.1",
+    "@release-it/conventional-changelog": "^1.0.0",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
     "@types/jest": "24.0.9",
@@ -99,6 +100,7 @@
     "jasmine-marbles": "0.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "jest": "24.1.0",
+    "jest-preset-angular": "7.0.0",
     "karma": "~3.0.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.1",
