@@ -7,10 +7,10 @@
     "tagName": "v${version}",
     "commit": true,
     "commitMessage": "release: ${version}",
-    "commitArgs": "-S --no-verify",
+    "commitArgs": "--sign --no-verify",
     "tag": true,
     "tagAnnotation": "Packages released with version: ${version}",
-    "tagArgs": "-S",
+    "tagArgs": "-f",
     "push": true
   },
   "github": {
