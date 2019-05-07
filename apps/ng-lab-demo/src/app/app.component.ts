@@ -9,7 +9,6 @@ import { of, Observable } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-lab-demo';
   responsive$: Observable<ResponsiveChangeInterface>;
 
   public handlerResponsiveChange(change: ResponsiveChangeInterface): void {
