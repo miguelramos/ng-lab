@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+import { ResponsiveChangeInterface } from '@ng-lab/responsive';
+import { of, Observable } from 'rxjs';
+
 @Component({
   selector: 'ng-lab-root',
   templateUrl: './app.component.html',
@@ -7,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-lab-demo';
+  responsive$: Observable<ResponsiveChangeInterface>;
+
+  public handlerResponsiveChange(change: ResponsiveChangeInterface): void {
+    this.responsive$ = of(change);
+  }
 }

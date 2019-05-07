@@ -1,6 +1,14 @@
-<div class="main-container">
+<div class="main-container" ngResponsive (responsiveChange)="handlerResponsiveChange($event)">
   <header class="header header-6">
-    <img class="logo" src="./assets/lab-logo.svg" alt="@ng-lab" />
+    <div class="branding">
+      <img class="logo" src="./assets/lab-logo.svg" alt="@ng-lab" />
+    </div>
+    <div class="header-actions">
+      <p style="margin-top: 0.2rem;">
+        Responsive Breakpoint: {{ (responsive$|async)?.key }} with size - {{(responsive$|async)?.width }} <br>
+        <i>Resize your window to see breakpoints</i>
+      </p>
+    </div>
   </header>
   <div class="content-container">
     <div class="content-area">

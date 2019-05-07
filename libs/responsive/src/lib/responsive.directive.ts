@@ -10,13 +10,14 @@ import {
   Directive,
   HostListener,
   AfterViewInit,
-  Inject
+  Inject,
+  ChangeDetectorRef
 } from '@angular/core';
 
 import { Subject } from 'rxjs';
 
 import { between } from '@ng-lab/support';
-import { Breakpoints } from './responsive.typing';
+import { Breakpoints, ResponsiveChangeInterface } from './responsive.typing';
 import { RESPONSIVE_BREAKPOINTS_TOKEN } from './responsive.token';
 
 /**
@@ -47,7 +48,7 @@ export class ResponsiveBreakpointDirective implements AfterViewInit {
    *
    * @memberof ResponsiveBreakpointDirective
    */
-  public breakpoint: string;
+  public breakpoint: keyof Breakpoints;
 
   /**
    * Property to subscribe for changes. It triggers
@@ -56,7 +57,7 @@ export class ResponsiveBreakpointDirective implements AfterViewInit {
    * @memberof ResponsiveBreakpointDirective
    */
   @Output()
-  public responsiveChange = new Subject<{ width: number; key: string }>();
+  public responsiveChange = new Subject<ResponsiveChangeInterface>();
 
   /**
    * @description
@@ -69,6 +70,7 @@ export class ResponsiveBreakpointDirective implements AfterViewInit {
   public onResize(width: number) {
     this.gridReference(width);
     this.responsiveChange.next({ width: width, key: this.breakpoint });
+    this.cd.detectChanges();
   }
 
   /**
@@ -78,7 +80,8 @@ export class ResponsiveBreakpointDirective implements AfterViewInit {
    * @memberof ResponsiveBreakpointDirective
    */
   constructor(
-    @Inject(RESPONSIVE_BREAKPOINTS_TOKEN) private breakpoints: Breakpoints
+    @Inject(RESPONSIVE_BREAKPOINTS_TOKEN) private breakpoints: Breakpoints,
+    private readonly cd: ChangeDetectorRef
   ) {}
 
   /**

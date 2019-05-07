@@ -40,7 +40,7 @@ describe('> ResponsiveBreakpointDirective', () => {
   });
 
   it('# Should listen to window resize changes.', async () => {
-    expect.assertions(1);
+    expect.assertions(2);
 
     component.responsiveDirective.responsiveChange.subscribe(change => {
       expect(change).toEqual({ width: 500, key: 'XS' });

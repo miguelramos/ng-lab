@@ -5,3 +5,8 @@ export interface Breakpoints {
   LG: number;
   XL: number;
 }
+
+export interface ResponsiveChangeInterface {
+  width: number;
+  key: keyof Breakpoints;
+}
