@@ -1,26 +1,19 @@
-<!--<div class="main-container">
-  <header class="header header-6">
-    <img class="logo" src="./assets/lab-logo.svg" alt="@ng-lab" />
-  </header>
-  <div class="content-container">
-    <div class="content-area">
-      <h1>Welcome to {{ title }}!</h1>
-      <router-outlet></router-outlet>
-    </div>
-    <nav class="sidenav"></nav>
-  </div>
-</div>-->
 <ui-layout-area
   [flexGrow]="0"
   [width]="'300px'"
   class="ui-sidebar"
   [uiLayoutResizer]="edgeSettings"
+  ngResponsive (responsiveChange)="handlerResponsiveChange($event)"
 >
   <header class="ui-sidebar__header">
     <img class="logo" src="./assets/lab-logo.svg" alt="@ng-lab" />
   </header>
   <nav class="ui-sidebar__nav">
     <h3 class="ui-sidebar__title">Packages</h3>
+    <p style="margin-top: 0.2rem;">
+        Responsive Breakpoint: {{ (responsive$|async)?.key }} with size - {{(responsive$|async)?.width }} <br>
+        <i>Resize your window to see breakpoints</i>
+      </p>
     <ul>
       <li>
         <a>Configurator</a>

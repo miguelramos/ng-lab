@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { EDGES } from '@ng-lab/layout';
 import { Snippet } from './components/code/code-snipet';
 
+import { ResponsiveChangeInterface } from '@ng-lab/responsive';
+import { of, Observable } from 'rxjs';
+
 @Component({
   selector: 'ng-lab-root',
   templateUrl: './app.component.html',
@@ -35,4 +38,9 @@ export class AppComponent {
     configuratorService.hasOption('settings.with.deep.notation');
     `
   });
+  responsive$: Observable<ResponsiveChangeInterface>;
+
+  public handlerResponsiveChange(change: ResponsiveChangeInterface): void {
+    this.responsive$ = of(change);
+  }
 }
