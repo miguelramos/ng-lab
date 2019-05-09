@@ -7,10 +7,7 @@
 // Clarity Component SCSS
 @import '@clr/ui/src/utils/components.clarity';
 
-.header-6 {
-  align-items: center;
-  .logo {
-    height: 32px;
-    margin: 0 12px;
-  }
+.logo {
+  height: 32px;
+  margin: 0 12px;
 }

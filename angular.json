@@ -64,7 +64,7 @@
               "apps/ng-lab-demo/src/favicon.ico",
               "apps/ng-lab-demo/src/assets"
             ],
-            "styles": ["apps/ng-lab-demo/src/styles.scss"],
+            "styles": ["apps/ng-lab-demo/src/styles.scss", "node_modules/prismjs/themes/prism-tomorrow.css"],
             "scripts": [],
             "stylePreprocessorOptions": {
               "includePaths": ["./node_modules"]

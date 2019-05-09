@@ -1,19 +1,21 @@
-<div class="main-container" ngResponsive (responsiveChange)="handlerResponsiveChange($event)">
-  <header class="header header-6">
-    <div class="branding">
-      <img class="logo" src="./assets/lab-logo.svg" alt="@ng-lab" />
+<clr-main-container ngResponsive (responsiveChange)="handlerResponsiveChange($event)">
+  <clr-header>
+    <div class="header-6" [clr-nav-level]="1">
+      <div class="branding">
+        <img class="logo" src="./assets/lab-logo.svg" alt="@ng-lab" />
+      </div>
     </div>
     <div class="header-actions">
-      <p style="margin-top: 0.2rem;">
-        Responsive Breakpoint: {{ (responsive$|async)?.key }} with size - {{(responsive$|async)?.width }} <br>
-        <i>Resize your window to see breakpoints</i>
+      <p style="margin-top: 0.2rem; margin-right: 0.2rem; text-align: right">
+        Breakpoint: {{ (responsive$|async)?.key }} with size - {{(responsive$|async)?.width }} <br>
+        <i>Window breakpoints</i>
       </p>
     </div>
-  </header>
+  </clr-header>
   <div class="content-container">
     <div class="content-area">
       <router-outlet></router-outlet>
     </div>
-    <nav class="sidenav"></nav>
+    <nav class="sidenav" [clr-nav-level]="2"></nav>
   </div>
-</div>
+</clr-main-container>
