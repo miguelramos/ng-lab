@@ -1,0 +1,11 @@
+@import '@clr/ui/src/utils/dependencies.clarity';
+
+:host::ng-deep{
+  .hello-area {
+    background-color: #F3E6FF;
+
+    &__title, &__info {
+      color: #232323;
+    }
+  }
+}

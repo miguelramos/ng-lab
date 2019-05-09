@@ -9,7 +9,11 @@ export const CONFIG = {
     { HOST: environment.api, KEY: '@api' }
   ],
   ENDPOINTS: {
-    LOGO: '@local:/assets/lab-log.svg',
+    LOGOS: {
+      CONFIGURATOR: '@local:/assets/configurator-logo.svg',
+      SUPPORT: '@local:/assets/support-logo.svg',
+      JWT: '@local:/assets/jwt-logo.svg'
+    },
     POSTS: {
       LIST: '@api:/posts',
       SINGLE: '@api:/posts/:id'
