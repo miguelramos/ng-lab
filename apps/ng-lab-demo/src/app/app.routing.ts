@@ -10,6 +10,10 @@ const ROUTES: Routes = [
   {
     path: 'home',
     loadChildren: './home/home.module#HomeModule'
+  },
+  {
+    path: 'configurator',
+    loadChildren: './packages/configurator-lab/configurator-lab.module#ConfiguratorLabModule'
   }
 ];
 

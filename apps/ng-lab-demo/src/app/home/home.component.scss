@@ -3,9 +3,14 @@
 :host::ng-deep{
   .hello-area {
     background-color: #F3E6FF;
+    margin: -1rem;
 
     &__title, &__info {
       color: #232323;
     }
+  }
+
+  .packages-area {
+    margin-top: 1rem;
   }
 }

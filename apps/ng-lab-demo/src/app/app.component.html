@@ -1,4 +1,7 @@
-<clr-main-container ngResponsive (responsiveChange)="handlerResponsiveChange($event)">
+<clr-main-container
+  ngResponsive
+  (responsiveChange)="handlerResponsiveChange($event)"
+>
   <clr-header>
     <div class="header-6" [clr-nav-level]="1">
       <div class="branding">
@@ -7,7 +10,8 @@
     </div>
     <div class="header-actions">
       <p style="margin-top: 0.2rem; margin-right: 0.2rem; text-align: right">
-        Breakpoint: {{ (responsive$|async)?.key }} with size - {{(responsive$|async)?.width }} <br>
+        Breakpoint: {{ (responsive$ | async)?.key }} with size -
+        {{ (responsive$ | async)?.width }} <br />
         <i>Window breakpoints</i>
       </p>
     </div>
@@ -16,6 +20,23 @@
     <div class="content-area">
       <router-outlet></router-outlet>
     </div>
-    <nav class="sidenav" [clr-nav-level]="2"></nav>
+    <nav class="sidenav" [clr-nav-level]="2">
+      <section class="sidenav-content">
+        <a class="nav-link" routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact:true}">Home</a>
+        <section class="nav-group">
+          <input id="packages" type="checkbox">
+          <label for="packages">Packages</label>
+          <ul class="nav-list">
+            <li><a class="nav-link" routerLinkActive="active" routerLink="/configurator">Configurator</a></li>
+            <li><a class="nav-link">Http Script</a></li>
+            <li><a class="nav-link">Http Url</a></li>
+            <li><a class="nav-link">Hub</a></li>
+            <li><a class="nav-link">JWT</a></li>
+            <li><a class="nav-link">Responsive</a></li>
+            <li><a class="nav-link">Support</a></li>
+          </ul>
+        </section>
+      </section>
+    </nav>
   </div>
 </clr-main-container>
