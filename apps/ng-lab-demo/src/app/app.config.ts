@@ -12,7 +12,11 @@ export const CONFIG = {
     LOGOS: {
       CONFIGURATOR: '@local:/assets/configurator-logo.svg',
       SUPPORT: '@local:/assets/support-logo.svg',
-      JWT: '@local:/assets/jwt-logo.svg'
+      JWT: '@local:/assets/jwt-logo.svg',
+      RESPONSIVE: '@local:/assets/responsive-logo.svg',
+      HUB: '@local:/assets/hub-logo.svg',
+      HS: '@local:/assets/hs-logo.svg',
+      HU: '@local:/assets/hu-logo.svg'
     },
     POSTS: {
       LIST: '@api:/posts',
