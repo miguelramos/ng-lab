@@ -1,4 +1,4 @@
-<div class="main-container">
+<!--<div class="main-container">
   <header class="header header-6">
     <img class="logo" src="./assets/lab-logo.svg" alt="@ng-lab" />
   </header>
@@ -9,4 +9,49 @@
     </div>
     <nav class="sidenav"></nav>
   </div>
-</div>
+</div>-->
+<ui-layout-area
+  [flexGrow]="0"
+  [width]="'300px'"
+  class="ui-sidebar"
+  [uiLayoutResizer]="edgeSettings"
+>
+  <header class="ui-sidebar__header">
+    <img class="logo" src="./assets/lab-logo.svg" alt="@ng-lab" />
+  </header>
+  <nav class="ui-sidebar__nav">
+    <h3 class="ui-sidebar__title">Packages</h3>
+    <ul>
+      <li>
+        <a>Configurator</a>
+      </li>
+      <li>
+        <a>Http Script</a>
+      </li>
+      <li>
+        <a>Http Url</a>
+      </li>
+      <li>
+        <a>Hub</a>
+      </li>
+      <li>
+        <a>JWT</a>
+      </li>
+      <li>
+        <a>Layout</a>
+      </li>
+      <li>
+        <a>Responsive</a>
+      </li>
+      <li>
+        <a>Support</a>
+      </li>
+    </ul>
+  </nav>
+</ui-layout-area>
+<ui-layout-area [flexGrow]="1">
+  <section class="code-card">
+    <ng-lab-code lang="typescript" [snippet]="configExample"></ng-lab-code>
+  </section>
+  <router-outlet></router-outlet>
+</ui-layout-area>
