@@ -5,9 +5,6 @@ import { Snippet } from './components/code/code-snipet';
 import { ResponsiveChangeInterface } from '@ng-lab/responsive';
 import { of, Observable } from 'rxjs';
 
-import { ResponsiveChangeInterface } from '@ng-lab/responsive';
-import { of, Observable } from 'rxjs';
-
 @Component({
   selector: 'ng-lab-root',
   templateUrl: './app.component.html',
