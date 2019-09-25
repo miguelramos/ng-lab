@@ -122,11 +122,11 @@ export class LayoutAreaComponent implements AfterViewInit, OnChanges {
       this.render.setStyle(this.element, 'flex-direction', this.flexDirection);
     }
 
-    if (this.flexGrow) {
+    if (this.flexGrow || this.flexGrow === 0) {
       this.render.setStyle(this.element, 'flex-grow', this.flexGrow);
     }
 
-    if (this.flexShrink) {
+    if (this.flexShrink || this.flexShrink === 0) {
       this.render.setStyle(this.element, 'flex-shrink', this.flexShrink);
     }
 

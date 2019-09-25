@@ -4,23 +4,25 @@ import { RouterModule, Routes } from '@angular/router';
 const ROUTES: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: '/home'
-  },
-  {
-    path: 'home',
-    loadChildren: './home/home.module#HomeModule'
-  },
-  {
-    path: 'configurator',
-    loadChildren: './packages/configurator-lab/configurator-lab.module#ConfiguratorLabModule'
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        loadChildren: './pages/home/home.module#HomeModule'
+      },
+      {
+        path: 'configurator',
+        loadChildren:
+          './pages/configurator-lab/configurator-lab.module#ConfiguratorLabModule'
+      }
+    ]
   }
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(ROUTES, {
-      enableTracing: false,
+      enableTracing: true,
       initialNavigation: 'enabled',
       useHash: false
     })

@@ -12,7 +12,6 @@ import { ConfiguratorService } from '@ng-lab/configurator';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
     ApplicationRoutingModule,
     ApplicationProvisionModule
   ],

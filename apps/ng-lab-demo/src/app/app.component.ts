@@ -16,7 +16,7 @@ export class AppComponent {
   edgeSettings = {
     gutter: 4,
     edge: EDGES.RIGHT,
-    color: '#ececec'
+    color: 'transparent'
   };
 
   configExample = Snippet({
