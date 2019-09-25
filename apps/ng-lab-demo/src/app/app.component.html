@@ -63,8 +63,12 @@
   <router-outlet></router-outlet>
 </ui-layout-area>
 
-<p class="ui-card ui-alert">
-  Responsive Breakpoint: {{ (responsive$ | async)?.key }} with size -
-  {{ (responsive$ | async)?.width }} <br />
-  <i>Resize your window to see breakpoints</i>
-</p>
+<div class="ui-card ui-alert">
+  <div class="ui-card__description">
+    <span *ngIf="(responsive$ | async) as responsive">
+      Responsive Breakpoint: {{ responsive?.key }} with size - {{ responsive?.width }}
+    </span>
+    <br />
+    <i>Resize your window to see breakpoints</i>
+  </div>
+</div>

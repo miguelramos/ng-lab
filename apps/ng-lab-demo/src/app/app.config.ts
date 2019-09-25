@@ -21,6 +21,9 @@ export const CONFIG = {
     POSTS: {
       LIST: '@api:/posts',
       SINGLE: '@api:/posts/:id'
+    },
+    HOME: {
+      FETCH: '@local:/assets/data/home.json'
     }
   }
 };

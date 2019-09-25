@@ -20,7 +20,8 @@
       "@ng-lab/jwt": ["libs/jwt/src/index.ts"],
       "@ng-lab/http/url": ["libs/http/url/src/index.ts"],
       "@ng-lab/http/script": ["libs/http/script/src/index.ts"],
-      "@ng-lab/layout": ["libs/layout/src/index.ts"]
+      "@ng-lab/layout": ["libs/layout/src/index.ts"],
+      "@ng-lab/app/*": ["apps/ng-lab-demo/src/*"]
     },
     "rootDir": "."
   },

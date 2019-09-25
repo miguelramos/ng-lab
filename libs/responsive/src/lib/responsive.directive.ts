@@ -9,9 +9,9 @@ import {
   Output,
   Directive,
   HostListener,
-  AfterViewInit,
   Inject,
-  ChangeDetectorRef
+  ChangeDetectorRef,
+  OnInit
 } from '@angular/core';
 
 import { Subject } from 'rxjs';
@@ -40,7 +40,7 @@ import { RESPONSIVE_BREAKPOINTS_TOKEN } from './responsive.token';
   selector: 'ngResponsive, [ngResponsive]',
   exportAs: 'ngResponsive'
 })
-export class ResponsiveBreakpointDirective implements AfterViewInit {
+export class ResponsiveBreakpointDirective implements OnInit {
 
   /**
    * @description
@@ -86,11 +86,11 @@ export class ResponsiveBreakpointDirective implements AfterViewInit {
 
   /**
    * @description
-   * After view inited register the resize event listener.
+   * Register the resize event listener.
    *
    * @memberof ResponsiveBreakpointDirective
    */
-  ngAfterViewInit() {
+  ngOnInit() {
     this.onResize(window.innerWidth);
   }
 

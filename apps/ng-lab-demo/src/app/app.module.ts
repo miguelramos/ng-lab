@@ -2,10 +2,13 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
+import { NgxsModule } from '@ngxs/store';
+import { NgxsDataPluginModule } from '@ngxs-labs/data';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { ApplicationRoutingModule } from './app.routing';
 import { ApplicationProvisionModule } from './app.provision';
 import { ConfiguratorService } from '@ng-lab/configurator';
+import { environment } from '@ng-lab/app/environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,7 +16,12 @@ import { ConfiguratorService } from '@ng-lab/configurator';
     BrowserModule,
     BrowserAnimationsModule,
     ApplicationRoutingModule,
-    ApplicationProvisionModule
+    ApplicationProvisionModule,
+    NgxsModule.forRoot([], { developmentMode: !environment.production }),
+    NgxsDataPluginModule.forRoot(),
+    NgxsReduxDevtoolsPluginModule.forRoot({
+      disabled: environment.production
+    })
   ],
   providers: [],
   bootstrap: [AppComponent],

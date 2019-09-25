@@ -22,7 +22,7 @@ const ROUTES: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(ROUTES, {
-      enableTracing: true,
+      enableTracing: false,
       initialNavigation: 'enabled',
       useHash: false
     })
