@@ -1,0 +1,6 @@
+<ng-container *ngIf="!disablePrism">
+  <pre><code [lab-code-highlight]="'language-'+language">{{code.trim()}}</code></pre>
+</ng-container>
+<ng-container *ngIf="disablePrism">
+  <pre><code class="lab-code">{{code.trim()}}</code></pre>
+</ng-container>
