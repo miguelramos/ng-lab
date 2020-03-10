@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpUrlService } from '@ng-lab/http/url';
+import { HomeState } from './state/home.state';
+import { Observable } from 'rxjs';
+import { HomeModel } from './state/home-model';
 
 @Component({
   selector: 'ng-lab-home',
@@ -7,26 +9,14 @@ import { HttpUrlService } from '@ng-lab/http/url';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  configuratorLogo: string;
-  supportLogo: string;
-  jwtLogo: string;
-  responsiveLogo: string;
-  hubLogo: string;
-  httpScriptLogo: string;
-  httpUrlLogo: string;
+  home$: Observable<HomeModel>;
 
   constructor(
-    private readonly url: HttpUrlService
+    private readonly homeState: HomeState
   ) {}
 
   ngOnInit() {
-    this.configuratorLogo = this.url.get('LOGOS.CONFIGURATOR');
-    this.supportLogo = this.url.get('LOGOS.SUPPORT');
-    this.jwtLogo = this.url.get('LOGOS.JWT');
-    this.responsiveLogo = this.url.get('LOGOS.RESPONSIVE');
-    this.hubLogo = this.url.get('LOGOS.HUB');
-    this.httpScriptLogo = this.url.get('LOGOS.HS');
-    this.httpUrlLogo = this.url.get('LOGOS.HU');
+    this.home$ = this.homeState.home$;
   }
 
 }
