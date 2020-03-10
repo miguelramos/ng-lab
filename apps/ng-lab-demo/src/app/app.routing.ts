@@ -8,12 +8,12 @@ const ROUTES: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        loadChildren: './pages/home/home.module#HomeModule'
+        loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
       },
       {
         path: 'configurator',
         loadChildren:
-          './pages/configurator-lab/configurator-lab.module#ConfiguratorLabModule'
+          () => import('./pages/configurator-lab/configurator-lab.module').then(m => m.ConfiguratorLabModule)
       }
     ]
   }

@@ -13,9 +13,7 @@
     "importHelpers": true,
     "types": [],
     "lib": ["dom", "es2018"],
-    "paths": {
-      "@ng-lab/*": ["dist/libs/*"]
-    }
+    "paths": { "@ng-lab/*": ["dist/libs/*"] }
   },
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
@@ -25,5 +23,5 @@
     "strictInjectionParameters": true,
     "enableResourceInlining": true
   },
-  "exclude": ["src/test.ts", "**/*.spec.ts"]
+  "exclude": ["src/test-setup.ts", "**/*.spec.ts"]
 }

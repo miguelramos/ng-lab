@@ -10,7 +10,7 @@
       "prefix": "ng-lab",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@nrwl/angular:package",
           "options": {
             "tsConfig": "libs/support/tsconfig.lib.json",
             "project": "libs/support/ng-package.json"
@@ -23,7 +23,7 @@
               "libs/support/tsconfig.lib.json",
               "libs/support/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/support/**"]
           }
         },
         "test": {
@@ -31,7 +31,8 @@
           "options": {
             "jestConfig": "libs/support/jest.config.js",
             "tsConfig": "libs/support/tsconfig.spec.json",
-            "setupFile": "libs/support/src/test-setup.ts"
+            "setupFile": "libs/support/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       },
@@ -55,6 +56,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/apps/ng-lab-demo",
             "index": "apps/ng-lab-demo/src/index.html",
             "main": "apps/ng-lab-demo/src/main.ts",
@@ -95,6 +97,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -124,7 +130,7 @@
               "apps/ng-lab-demo/tsconfig.app.json",
               "apps/ng-lab-demo/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!apps/ng-lab-demo/**"]
           }
         },
         "test": {
@@ -132,7 +138,8 @@
           "options": {
             "jestConfig": "apps/ng-lab-demo/jest.config.js",
             "tsConfig": "apps/ng-lab-demo/tsconfig.spec.json",
-            "setupFile": "apps/ng-lab-demo/src/test-setup.ts"
+            "setupFile": "apps/ng-lab-demo/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       }
@@ -158,7 +165,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/ng-lab-demo-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!apps/ng-lab-demo-e2e/**"]
           }
         }
       }
@@ -170,7 +177,7 @@
       "prefix": "ng-lab",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@nrwl/angular:package",
           "options": {
             "tsConfig": "libs/configurator/tsconfig.lib.json",
             "project": "libs/configurator/ng-package.json"
@@ -183,7 +190,7 @@
               "libs/configurator/tsconfig.lib.json",
               "libs/configurator/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/configurator/**"]
           }
         },
         "test": {
@@ -191,7 +198,8 @@
           "options": {
             "jestConfig": "libs/configurator/jest.config.js",
             "tsConfig": "libs/configurator/tsconfig.spec.json",
-            "setupFile": "libs/configurator/src/test-setup.ts"
+            "setupFile": "libs/configurator/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       },
@@ -208,7 +216,7 @@
       "prefix": "ng-lab",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@nrwl/angular:package",
           "options": {
             "tsConfig": "libs/hub/tsconfig.lib.json",
             "project": "libs/hub/ng-package.json"
@@ -221,7 +229,7 @@
               "libs/hub/tsconfig.lib.json",
               "libs/hub/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/hub/**"]
           }
         },
         "test": {
@@ -229,7 +237,8 @@
           "options": {
             "jestConfig": "libs/hub/jest.config.js",
             "tsConfig": "libs/hub/tsconfig.spec.json",
-            "setupFile": "libs/hub/src/test-setup.ts"
+            "setupFile": "libs/hub/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       },
@@ -246,7 +255,7 @@
       "prefix": "ng-lab",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@nrwl/angular:package",
           "options": {
             "tsConfig": "libs/responsive/tsconfig.lib.json",
             "project": "libs/responsive/ng-package.json"
@@ -259,7 +268,7 @@
               "libs/responsive/tsconfig.lib.json",
               "libs/responsive/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/responsive/**"]
           }
         },
         "test": {
@@ -267,7 +276,8 @@
           "options": {
             "jestConfig": "libs/responsive/jest.config.js",
             "tsConfig": "libs/responsive/tsconfig.spec.json",
-            "setupFile": "libs/responsive/src/test-setup.ts"
+            "setupFile": "libs/responsive/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       },
@@ -284,7 +294,7 @@
       "prefix": "ng-lab",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@nrwl/angular:package",
           "options": {
             "tsConfig": "libs/jwt/tsconfig.lib.json",
             "project": "libs/jwt/ng-package.json"
@@ -297,7 +307,7 @@
               "libs/jwt/tsconfig.lib.json",
               "libs/jwt/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/jwt/**"]
           }
         },
         "test": {
@@ -305,7 +315,8 @@
           "options": {
             "jestConfig": "libs/jwt/jest.config.js",
             "tsConfig": "libs/jwt/tsconfig.spec.json",
-            "setupFile": "libs/jwt/src/test-setup.ts"
+            "setupFile": "libs/jwt/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       },
@@ -322,7 +333,7 @@
       "prefix": "ng-lab",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@nrwl/angular:package",
           "options": {
             "tsConfig": "libs/http/url/tsconfig.lib.json",
             "project": "libs/http/url/ng-package.json"
@@ -335,7 +346,7 @@
               "libs/http/url/tsconfig.lib.json",
               "libs/http/url/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/http/url/**"]
           }
         },
         "test": {
@@ -343,7 +354,8 @@
           "options": {
             "jestConfig": "libs/http/url/jest.config.js",
             "tsConfig": "libs/http/url/tsconfig.spec.json",
-            "setupFile": "libs/http/url/src/test-setup.ts"
+            "setupFile": "libs/http/url/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       },
@@ -360,7 +372,7 @@
       "prefix": "ng-lab",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@nrwl/angular:package",
           "options": {
             "tsConfig": "libs/http/script/tsconfig.lib.json",
             "project": "libs/http/script/ng-package.json"
@@ -373,7 +385,7 @@
               "libs/http/script/tsconfig.lib.json",
               "libs/http/script/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/http/script/**"]
           }
         },
         "test": {
@@ -381,7 +393,8 @@
           "options": {
             "jestConfig": "libs/http/script/jest.config.js",
             "tsConfig": "libs/http/script/tsconfig.spec.json",
-            "setupFile": "libs/http/script/src/test-setup.ts"
+            "setupFile": "libs/http/script/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       },
@@ -398,7 +411,7 @@
       "prefix": "ui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@nrwl/angular:package",
           "options": {
             "tsConfig": "libs/layout/tsconfig.lib.json",
             "project": "libs/layout/ng-package.json"
@@ -411,7 +424,7 @@
               "libs/layout/tsconfig.lib.json",
               "libs/layout/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/layout/**"]
           }
         },
         "test": {
@@ -419,7 +432,8 @@
           "options": {
             "jestConfig": "libs/layout/jest.config.js",
             "tsConfig": "libs/layout/tsconfig.spec.json",
-            "setupFile": "libs/layout/src/test-setup.ts"
+            "setupFile": "libs/layout/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       },

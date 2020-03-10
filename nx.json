@@ -15,7 +15,8 @@
       "tags": ["scope:app"]
     },
     "ng-lab-demo-e2e": {
-      "tags": ["scope:e2e"]
+      "tags": ["scope:e2e"],
+      "implicitDependencies": ["ng-lab-demo"]
     },
     "configurator": {
       "tags": ["scope:lib", "type:functional"]
