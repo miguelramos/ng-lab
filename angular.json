@@ -467,5 +467,5 @@
       "framework": "express"
     }
   },
-  "defaultProject": "support"
+  "defaultProject": "ng-lab-demo"
 }

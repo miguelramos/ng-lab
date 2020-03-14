@@ -29,7 +29,7 @@ export class HomeState extends NgxsDataRepository<HomeModel> {
   public getContent() {
     return this.homeService.fetchAll().pipe(
       tap(content => {
-        this.ctx.setState(content);
+        this.setState(() => content);
         return content;
       })
     );
