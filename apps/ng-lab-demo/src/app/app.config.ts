@@ -24,6 +24,9 @@ export const CONFIG = {
     },
     HOME: {
       FETCH: '@local:/assets/data/home.json'
+    },
+    PACKAGES: {
+      FETCH: '@local:/assets/data/packages.json'
     }
   }
 };

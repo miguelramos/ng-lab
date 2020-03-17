@@ -74,3 +74,13 @@ export function flatten(object: object, prefix = '', separator = '.') {
       : { ...prev, ...{ [`${prefix}${element}`]: object[element] } };
   }, {});
 }
+
+export function chunk(collection: any[], size: number) {
+  if (!collection.length) {
+    return [];
+  }
+  const head = collection.slice(0, size);
+  const tail = collection.slice(size);
+
+  return [head, ...chunk(tail, size)];
+};

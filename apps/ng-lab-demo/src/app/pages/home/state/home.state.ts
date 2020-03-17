@@ -11,7 +11,8 @@ import { Observable } from 'rxjs';
   name: 'home',
   defaults: {
     title: null,
-    description: null
+    description: null,
+    packages: null
   }
 })
 @Injectable()
@@ -28,10 +29,14 @@ export class HomeState extends NgxsDataRepository<HomeModel> {
   @action()
   public getContent() {
     return this.homeService.fetchAll().pipe(
-      tap(content => {
-        this.setState(() => content);
-        return content;
-      })
+      tap(content => this.setState((state) => {
+        return {
+          ...state,
+          title: content.title,
+          description: content.description,
+          packages: content.packages
+        };
+      }))
     );
   }
 }

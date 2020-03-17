@@ -42,13 +42,17 @@ pre[class*='language-'] {
   padding: 10px;
   flex-direction: row;
   align-items: stretch;
+  flex-wrap: wrap;
 
   .ui-card {
-    width: 25%;
+    width: 23%;
+    margin: 1%;
   }
+
   .ui-card__media {
     display: flex;
     justify-content: center;
+    padding: 10px;
     > img {
       width: 50%;
     }
