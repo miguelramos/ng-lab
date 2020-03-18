@@ -1,0 +1,18 @@
+<ng-container *ngIf="package$ | async as pkg">
+  <div class="ui-banner">
+    <ui-layout-area
+      [flexGrow]="0"
+      [flexShrink]="0"
+      margin="0 2% 0 0"
+    >
+      <img class="ui-banner__logo" [src]="pkg.logo" alt="{{pkg.title}}">
+    </ui-layout-area>
+    <ui-layout-area [flexGrow]="1">
+      <h2>{{pkg.title}}</h2>
+      <p>{{pkg.description}}</p>
+    </ui-layout-area>
+  </div>
+  <section class="code-card" >
+    <ng-lab-code lang="typescript" [snippet]="configExample"></ng-lab-code>
+  </section>
+</ng-container>

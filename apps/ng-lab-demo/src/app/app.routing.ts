@@ -11,9 +11,9 @@ const ROUTES: Routes = [
         loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
       },
       {
-        path: 'configurator',
+        path: 'packages',
         loadChildren:
-          () => import('./pages/configurator-lab/configurator-lab.module').then(m => m.ConfiguratorLabModule)
+          () => import('./pages/packages/packages.module').then(m => m.PackagesModule)
       }
     ]
   }

@@ -11,7 +11,7 @@
       </div>
       <div class="ui-card__description">{{package.description}}</div>
       <div class="ui-card__footer">
-        <a class="btn btn-sm btn-link" href="">Read more</a>
+        <a class="btn btn-sm btn-link" style="flex:1" [routerLink]="['/packages', package.id]">Read more</a>
         <img
           [alt]="package.namespace"
           [src]="package.badge"

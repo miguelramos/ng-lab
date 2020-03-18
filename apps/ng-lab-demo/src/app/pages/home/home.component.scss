@@ -1,15 +1,3 @@
-:host::ng-deep {
-  .hello-area {
-    background-color: #f3e6ff;
-    margin: -1rem;
-
-    &__title,
-    &__info {
-      color: #232323;
-    }
-  }
-
-  .packages-area {
-    margin-top: 1rem;
-  }
+:host {
+  background-color: #ffffff;
 }

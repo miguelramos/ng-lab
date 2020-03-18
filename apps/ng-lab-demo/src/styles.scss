@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
 
 html,
 body {
@@ -10,7 +10,7 @@ body {
 
 body {
   min-width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Lato', Roboto,
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, Roboto,
     'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   overflow: hidden;
@@ -23,17 +23,18 @@ pre[class*='language-'] {
   border-radius: 3px;
 }
 
+a {
+  color: #5a864a;
+}
+
 pre[class*='language-'] {
   border: 1px solid #ececec;
 }
 
 .ui-hero {
   padding: 24px;
-  background-color: #eee5e6;
-
-  &__title {
-    color: #1d2328;
-  }
+  background-color: #f4f7f4;
+  color: #323942;
 }
 
 .ui-section {
@@ -69,8 +70,8 @@ pre[class*='language-'] {
   &__header {
     border-bottom: 1px solid #ededed;
     color: #000;
-    font-size: 0.75rem;
-    font-weight: 200;
+    font-size: 1.25rem;
+    font-weight: 600;
     letter-spacing: normal;
     padding: 0.5rem 0.75rem;
   }
@@ -100,6 +101,7 @@ pre[class*='language-'] {
 
   &__footer {
     padding: 0.5rem 0.75rem;
+    display: flex;
   }
 }
 
