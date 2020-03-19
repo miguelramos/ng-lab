@@ -1,4 +1,3 @@
-// tslint:disable:no-bitwise
 /**
  * @license
  * Copyright NgLab All Rights Reserved.
@@ -11,11 +10,23 @@
  * Create unique UUID
  */
 export function uniqueID(): string {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-    const r = (Math.random() * 16) | 0,
-      v = c === 'x' ? r : (r & 0x3) | 0x8;
-    return v.toString(16);
-  });
+  const chars = '0123456789abcdef'.split('');
+  const uuid = [],
+    rnd = Math.random;
+  let r = null;
+
+  uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-';
+  uuid[14] = '4'; // version 4
+
+  for (let i = 0; i < 36; i++) {
+    if (!uuid[i]) {
+      r = 0 | (rnd() * 16);
+
+      uuid[i] = chars[i === 19 ? (r & 0x3) | 0x8 : r & 0xf];
+    }
+  }
+
+  return uuid.join('');
 }
 
 /**
@@ -74,3 +85,16 @@ export function flatten(object: object, prefix = '', separator = '.') {
       : { ...prev, ...{ [`${prefix}${element}`]: object[element] } };
   }, {});
 }
+
+/**
+ * Split an array in x size chunks.
+ */
+export function chunk(collection: any[], size: number) {
+  if (!collection.length) {
+    return [];
+  }
+  const head = collection.slice(0, size);
+  const tail = collection.slice(size);
+
+  return [head, ...chunk(tail, size)];
+};

@@ -1,0 +1,39 @@
+:host::ng-deep {
+  background-color: #fff;
+
+  .ui-banner {
+    display: flex;
+    align-items: center;
+    background-color: #45b04a;
+    color: white;
+    padding: 2%;
+
+    &__logo {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+    }
+  }
+
+  .md-card {
+    padding: 2%;
+
+    &__table {
+      table {
+        width: 100%;
+
+        tr:nth-child(even) {
+          background: #ededed;
+        }
+
+        tr:nth-child(odd) {
+          background: #f8f6f7;
+        }
+
+        td, th {
+          padding: 8px;
+        }
+      }
+    }
+  }
+}

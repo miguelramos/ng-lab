@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Dosis:400,700&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
 
 html,
 body {
@@ -10,15 +10,114 @@ body {
 
 body {
   min-width: 100%;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  overflow: hidden;
+  background-color: #f8f6f7;
 }
 
 code[class*='language-'],
 pre[class*='language-'] {
-  background-color: #f4f4f4;
+  background-color: #333333;
   border-radius: 3px;
+}
+
+a {
+  color: #5a864a;
 }
 
 pre[class*='language-'] {
   border: 1px solid #ececec;
+}
+
+.ui-hero {
+  padding: 24px;
+  background-color: #f4f7f4;
+  color: #323942;
+}
+
+.ui-section {
+  position: relative;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .ui-card {
+    flex: 0 1 calc(25% - 1em);
+    box-sizing: border-box;
+    margin: 1rem .25em;
+  }
+
+  .ui-card__media {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    > img {
+      width: 50%;
+    }
+  }
+}
+
+.ui-card {
+  box-shadow: 0px 0px 8px 0px rgba(209, 209, 209, 1);
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    border-bottom: 1px solid #ededed;
+    color: #000;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: normal;
+    padding: 0.5rem 0.75rem;
+  }
+
+  &__media {
+    > img {
+      display: block;
+      height: auto;
+      width: 100%;
+      max-width: 900px;
+    }
+  }
+
+  &__description {
+    border-bottom: 1px solid #ededed;
+    padding: 0.5rem 0.75rem;
+    min-height: 112px;
+
+    &__title {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #000;
+      font-size: 0.75rem;
+      font-weight: 200;
+      letter-spacing: normal;
+    }
+  }
+
+  &__footer {
+    padding: 0.5rem 0.75rem;
+    display: flex;
+  }
+}
+
+.ui-alert {
+  position: fixed;
+  top: 2%;
+  right: 2%;
+  width: 250px;
+  margin: 0;
+  font-size: 11px;
+  text-align: center;
+
+  .ui-card__description {
+    border-bottom: 0;
+    min-height: auto;
+  }
 }

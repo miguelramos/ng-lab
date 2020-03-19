@@ -2,7 +2,8 @@ dist: trusty
 sudo: false
 language: node_js
 node_js:
-  - "10.9.0"
+  - "10.13.0"
+  - "12"
 
 install:
 - npm ci
@@ -39,6 +40,7 @@ jobs:
         - 'cat coverage/libs/support/lcov.info | node_modules/coveralls/bin/coveralls.js'
         - 'cat coverage/libs/http/url/lcov.info | node_modules/coveralls/bin/coveralls.js'
         - 'cat coverage/libs/http/script/lcov.info | node_modules/coveralls/bin/coveralls.js'
+        - 'cat coverage/libs/layout/lcov.info | node_modules/coveralls/bin/coveralls.js'
     - stage: building
       script: npm run build
     - stage: deploying

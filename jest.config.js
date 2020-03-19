@@ -5,9 +5,13 @@ module.exports = {
   },
   resolver: '@nrwl/jest/plugins/resolver',
   moduleFileExtensions: ['ts', 'js', 'html'],
-  collectCoverage: true,
   coverageReporters: ['html', 'lcov'],
   globals: {
-    window: true
+    window: true,
+    'ts-jest': {
+      diagnostics: {
+        warnOnly: true
+      }
+    }
   }
 };

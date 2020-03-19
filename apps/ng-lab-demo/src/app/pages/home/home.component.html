@@ -1,0 +1,22 @@
+
+  <div class="ui-hero">
+    <h1 class="ui-hero__title">{{title$|async}}</h1>
+    <p class="ui-hero__info">{{description$|async}}</p>
+  </div>
+  <section class="ui-section">
+    <div class="ui-card" *ngFor="let package of packages$ | async">
+      <div class="ui-card__header">{{package.title}}</div>
+      <div class="ui-card__media">
+        <img [src]="package.logo" [alt]="package.name" />
+      </div>
+      <div class="ui-card__description">{{package.description}}</div>
+      <div class="ui-card__footer">
+        <a class="btn btn-sm btn-link" style="flex:1" [routerLink]="['/packages', package.id]">Read more</a>
+        <img
+          [alt]="package.namespace"
+          [src]="package.badge + '?color=green&style=flat'"
+        />
+      </div>
+    </div>
+  </section>
+

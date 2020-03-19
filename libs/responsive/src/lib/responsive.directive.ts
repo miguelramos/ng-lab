@@ -9,14 +9,15 @@ import {
   Output,
   Directive,
   HostListener,
-  AfterViewInit,
-  Inject
+  Inject,
+  ChangeDetectorRef,
+  OnInit
 } from '@angular/core';
 
 import { Subject } from 'rxjs';
 
 import { between } from '@ng-lab/support';
-import { Breakpoints } from './responsive.typing';
+import { Breakpoints, ResponsiveChangeInterface } from './responsive.typing';
 import { RESPONSIVE_BREAKPOINTS_TOKEN } from './responsive.token';
 
 /**
@@ -39,7 +40,7 @@ import { RESPONSIVE_BREAKPOINTS_TOKEN } from './responsive.token';
   selector: 'ngResponsive, [ngResponsive]',
   exportAs: 'ngResponsive'
 })
-export class ResponsiveBreakpointDirective implements AfterViewInit {
+export class ResponsiveBreakpointDirective implements OnInit {
 
   /**
    * @description
@@ -47,7 +48,7 @@ export class ResponsiveBreakpointDirective implements AfterViewInit {
    *
    * @memberof ResponsiveBreakpointDirective
    */
-  public breakpoint: string;
+  public breakpoint: keyof Breakpoints;
 
   /**
    * Property to subscribe for changes. It triggers
@@ -56,7 +57,7 @@ export class ResponsiveBreakpointDirective implements AfterViewInit {
    * @memberof ResponsiveBreakpointDirective
    */
   @Output()
-  public responsiveChange = new Subject<{ width: number; key: string }>();
+  public responsiveChange = new Subject<ResponsiveChangeInterface>();
 
   /**
    * @description
@@ -69,6 +70,7 @@ export class ResponsiveBreakpointDirective implements AfterViewInit {
   public onResize(width: number) {
     this.gridReference(width);
     this.responsiveChange.next({ width: width, key: this.breakpoint });
+    this.cd.detectChanges();
   }
 
   /**
@@ -78,16 +80,17 @@ export class ResponsiveBreakpointDirective implements AfterViewInit {
    * @memberof ResponsiveBreakpointDirective
    */
   constructor(
-    @Inject(RESPONSIVE_BREAKPOINTS_TOKEN) private breakpoints: Breakpoints
+    @Inject(RESPONSIVE_BREAKPOINTS_TOKEN) private breakpoints: Breakpoints,
+    private readonly cd: ChangeDetectorRef
   ) {}
 
   /**
    * @description
-   * After view inited register the resize event listener.
+   * Register the resize event listener.
    *
    * @memberof ResponsiveBreakpointDirective
    */
-  ngAfterViewInit() {
+  ngOnInit() {
     this.onResize(window.innerWidth);
   }
 

@@ -4,25 +4,38 @@
   height: 100vh;
 
   .ui-sidebar {
-    background: #f4f4f4;
+    background: #fefefe;
+    color: #90969f;
+    box-shadow: inset -10px 0 10px -5px #eff1ef;
 
     &__header {
       display: flex;
       justify-content: center;
-      border-bottom: 1px solid #ececec;
-
-      .logo {
-        height: 32px;
-        margin: 24px 12px;
-      }
     }
 
     &__title {
       padding: 0 24px;
+      color: #7b818a;
     }
   }
 
   .code-card {
     margin: 25px;
+  }
+
+  .ui-content {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    min-height: 100%;
+  }
+
+  .ui-bar {
+    background-color: #46b04a;
+
+    .logo {
+      transform: rotateZ(90deg) translate(35px, 39px);
+      z-index: 1;
+      width: 116px;
+    }
   }
 }
