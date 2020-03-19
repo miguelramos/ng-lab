@@ -1,0 +1,6 @@
+{
+  "data": {
+    "title": "Welcome to @ng-lab packages.",
+    "description": "@ng-lab packages are functional libraries to help you on logic, decision tasks, tools, structures, browser features. This packages can go from directives, services and components (very few), that will have an opinated API to you to use to maintain repeated task, wrapper browser features and others things where you can use in more friendly, innovated and angular way. You will find from configuration, url resolver, screen responsive, jwt and other things as describe in this website, demonstrating the usage of those packages."
+  }
+}
