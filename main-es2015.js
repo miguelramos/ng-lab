@@ -1575,10 +1575,10 @@ const CONFIG = {
             SINGLE: '@api:/posts/:id'
         },
         HOME: {
-            FETCH: '@local:/assets/data/home.json'
+            FETCH: `@local:${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].production ? '/ng-lab/' : ''}/assets/data/home.json`
         },
         PACKAGES: {
-            FETCH: '@local:/assets/data/packages.json'
+            FETCH: `@local:${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].production ? '/ng-lab/' : ''}/assets/data/packages.json`
         }
     }
 };
