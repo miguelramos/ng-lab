@@ -14,6 +14,11 @@
           "options": {
             "tsConfig": "libs/support/tsconfig.lib.json",
             "project": "libs/support/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/support/tsconfig.lib.prod.json"
+            }
           }
         },
         "lint": {
@@ -181,6 +186,11 @@
           "options": {
             "tsConfig": "libs/configurator/tsconfig.lib.json",
             "project": "libs/configurator/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/configurator/tsconfig.lib.prod.json"
+            }
           }
         },
         "lint": {
@@ -220,6 +230,11 @@
           "options": {
             "tsConfig": "libs/hub/tsconfig.lib.json",
             "project": "libs/hub/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/hub/tsconfig.lib.prod.json"
+            }
           }
         },
         "lint": {
@@ -259,6 +274,11 @@
           "options": {
             "tsConfig": "libs/responsive/tsconfig.lib.json",
             "project": "libs/responsive/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/responsive/tsconfig.lib.prod.json"
+            }
           }
         },
         "lint": {
@@ -298,6 +318,11 @@
           "options": {
             "tsConfig": "libs/jwt/tsconfig.lib.json",
             "project": "libs/jwt/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/jwt/tsconfig.lib.prod.json"
+            }
           }
         },
         "lint": {
@@ -337,6 +362,11 @@
           "options": {
             "tsConfig": "libs/http/url/tsconfig.lib.json",
             "project": "libs/http/url/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/http/url/tsconfig.lib.prod.json"
+            }
           }
         },
         "lint": {
@@ -376,6 +406,11 @@
           "options": {
             "tsConfig": "libs/http/script/tsconfig.lib.json",
             "project": "libs/http/script/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/http/script/tsconfig.lib.prod.json"
+            }
           }
         },
         "lint": {
@@ -415,6 +450,11 @@
           "options": {
             "tsConfig": "libs/layout/tsconfig.lib.json",
             "project": "libs/layout/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/layout/tsconfig.lib.prod.json"
+            }
           }
         },
         "lint": {
