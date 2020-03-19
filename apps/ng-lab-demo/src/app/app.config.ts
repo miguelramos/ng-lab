@@ -23,10 +23,10 @@ export const CONFIG = {
       SINGLE: '@api:/posts/:id'
     },
     HOME: {
-      FETCH: '@local:/assets/data/home.json'
+      FETCH: `@local:${environment.production ? '/ng-lab/' : ''}/assets/data/home.json`
     },
     PACKAGES: {
-      FETCH: '@local:/assets/data/packages.json'
+      FETCH: `@local:${environment.production ? '/ng-lab/' : ''}/assets/data/packages.json`
     }
   }
 };
