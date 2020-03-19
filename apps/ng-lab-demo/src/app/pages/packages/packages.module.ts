@@ -7,7 +7,7 @@ import { PackageState } from './state/packages.state';
 import { NgxsModule } from '@ngxs/store';
 import { PackagesService } from './packages-service';
 import { LayoutModule } from '@ng-lab/layout';
-import { CodeModule } from '../../components/code/code.module';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [PackagesComponent],
@@ -15,9 +15,9 @@ import { CodeModule } from '../../components/code/code.module';
   imports: [
     CommonModule,
     LayoutModule,
-    CodeModule,
     PackagesRoutingModule,
-    NgxsModule.forFeature([PackageState])
+    NgxsModule.forFeature([PackageState]),
+    MarkdownModule.forChild()
   ]
 })
 export class PackagesModule { }

@@ -8,11 +8,15 @@
       <img class="ui-banner__logo" [src]="pkg.logo" alt="{{pkg.title}}">
     </ui-layout-area>
     <ui-layout-area [flexGrow]="1">
-      <h2>{{pkg.title}}</h2>
-      <p>{{pkg.description}}</p>
+      <h2>
+        {{pkg.title}}
+        <img src="{{pkg.badge}}?style=flat" alt="">
+      </h2>
+      <p style="margin-bottom: 2px;">npm install {{pkg.namespace}}</p>
+      <p style="margin-top: 0;">{{pkg.description}}</p>
     </ui-layout-area>
   </div>
-  <section class="code-card" >
-    <ng-lab-code lang="typescript" [snippet]="configExample"></ng-lab-code>
+  <section class="md-card">
+    <markdown [src]="pkg.md"></markdown>
   </section>
 </ng-container>

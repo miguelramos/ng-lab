@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { HttpUrlModule } from '@ng-lab/http/url';
 import { ResponsiveModule } from '@ng-lab/responsive';
 import { ConfiguratorModule } from '@ng-lab/configurator';
 import { LayoutModule } from '@ng-lab/layout';
+import { MarkdownModule } from 'ngx-markdown';
 
 import { CONFIG } from './app.config';
 import { CodeModule } from './components/code/code.module';
@@ -18,7 +19,8 @@ import { CodeModule } from './components/code/code.module';
     HttpUrlModule,
     ResponsiveModule,
     CodeModule,
-    LayoutModule
+    LayoutModule,
+    MarkdownModule.forRoot({ loader: HttpClient })
   ],
   exports: [
     ConfiguratorModule,

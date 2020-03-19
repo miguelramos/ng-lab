@@ -7,4 +7,5 @@ export interface PackageModel {
   namespace: string;
   badge: string;
   href: string;
+  md: string;
 }

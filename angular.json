@@ -68,7 +68,7 @@
             ],
             "styles": [
               "apps/ng-lab-demo/src/styles.scss",
-              "node_modules/prismjs/themes/prism.css"
+              "node_modules/prismjs/themes/prism-tomorrow.css"
             ],
             "scripts": [],
             "stylePreprocessorOptions": {

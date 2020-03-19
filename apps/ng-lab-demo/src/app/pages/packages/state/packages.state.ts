@@ -17,7 +17,8 @@ import { Observable } from 'rxjs';
     description: null,
     namespace: null,
     badge: null,
-    href: null
+    href: null,
+    md: null
   }
 })
 @Injectable()

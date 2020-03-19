@@ -41,13 +41,14 @@ pre[class*='language-'] {
   position: relative;
   display: flex;
   padding: 10px;
+  justify-content: space-between;
   flex-direction: row;
-  align-items: stretch;
   flex-wrap: wrap;
 
   .ui-card {
-    width: 23%;
-    margin: 1%;
+    flex: 0 1 calc(25% - 1em);
+    box-sizing: border-box;
+    margin: 1rem .25em;
   }
 
   .ui-card__media {
@@ -88,6 +89,7 @@ pre[class*='language-'] {
   &__description {
     border-bottom: 1px solid #ededed;
     padding: 0.5rem 0.75rem;
+    min-height: 112px;
 
     &__title {
       margin-top: 0;
@@ -107,10 +109,15 @@ pre[class*='language-'] {
 
 .ui-alert {
   position: fixed;
-  top: 10px;
-  right: 10px;
-  width: 180px;
+  top: 2%;
+  right: 2%;
+  width: 250px;
   margin: 0;
   font-size: 11px;
   text-align: center;
+
+  .ui-card__description {
+    border-bottom: 0;
+    min-height: auto;
+  }
 }

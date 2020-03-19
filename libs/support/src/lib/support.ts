@@ -75,6 +75,9 @@ export function flatten(object: object, prefix = '', separator = '.') {
   }, {});
 }
 
+/**
+ * Split an array in x size chunks.
+ */
 export function chunk(collection: any[], size: number) {
   if (!collection.length) {
     return [];
