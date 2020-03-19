@@ -25,8 +25,5 @@
     },
     "rootDir": "."
   },
-  "exclude": ["node_modules", "tmp"],
-  "angularCompilerOptions": {
-    "enableIvy": true
-  }
+  "exclude": ["node_modules", "tmp"]
 }
