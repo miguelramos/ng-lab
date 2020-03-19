@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpUrlService } from '@ng-lab/http/url';
 import { HttpClient } from '@angular/common/http';
-import { map, concatMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { PackageModel } from './state/packages-model';
 
 @Injectable()

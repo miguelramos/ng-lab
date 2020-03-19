@@ -4,12 +4,12 @@
       "id": 1,
       "title": "Configurator",
       "slug": "configurator",
-      "logo": "./assets/configurator-shield.svg",
+      "logo": "/assets/configurator-shield.svg",
       "description": "Configurator is an angular service where you can set/get all options or configs as a root (singleton) for all your app.",
       "namespace": "@ng-lab/configurator",
       "badge": "https://img.shields.io/npm/v/@ng-lab/configurator.svg",
       "href": "",
-      "md": "./assets/data/configurator.md"
+      "md": "/assets/data/configurator.md"
     },
     {
       "id": 2,
@@ -20,73 +20,73 @@
       "namespace": "@ng-lab/support",
       "badge": "https://img.shields.io/npm/v/@ng-lab/support.svg",
       "href": "",
-      "md": "./assets/data/support.md"
+      "md": "/assets/data/support.md"
     },
     {
       "id": 3,
       "title": "JWT",
       "slug": "jwt",
-      "logo": "./assets/jwt-shield.svg",
+      "logo": "/assets/jwt-shield.svg",
       "description": "JWT is an angular service to help you on decode valid token and also checking expiration to provide renovation mecanism.",
       "namespace": "@ng-lab/jwt",
       "badge": "https://img.shields.io/npm/v/@ng-lab/jwt.svg",
       "href": "",
-      "md":"./assets/data/jwt.md"
+      "md":"/assets/data/jwt.md"
     },
     {
       "id": 4,
       "title": "Responsive",
       "slug": "responsive",
-      "logo": "./assets/responsive-shield.svg",
+      "logo": "/assets/responsive-shield.svg",
       "description": "Responsive is an angular directive to define media breakpoints, listen for changes and trigger event when resize happens on the page.",
       "namespace": "@ng-lab/responsive",
       "badge": "https://img.shields.io/npm/v/@ng-lab/responsive.svg",
       "href": "",
-      "md": "./assets/data/responsive.md"
+      "md": "/assets/data/responsive.md"
     },
     {
       "id": 5,
       "title": "Hub",
       "slug": "hub",
-      "logo": "./assets/hub-shield.svg",
+      "logo": "/assets/hub-shield.svg",
       "description": "Hub is an angular service pub/sub where you can register channels and dispatch/listen custom events.",
       "namespace": "@ng-lab/hub",
       "badge": "https://img.shields.io/npm/v/@ng-lab/hub.svg",
       "href": "",
-      "md": "./assets/data/hub.md"
+      "md": "/assets/data/hub.md"
     },
     {
       "id": 6,
       "title": "Http-Script",
       "slug": "http-script",
-      "logo": "./assets/http-script-shield.svg",
+      "logo": "/assets/http-script-shield.svg",
       "description": "Http-Script is an angular service to register and load external javascript libraries.",
       "namespace": "@ng-lab/http-script",
       "badge": "https://img.shields.io/npm/v/@ng-lab/http-script.svg",
       "href": "",
-      "md": "./assets/data/http-script.md"
+      "md": "/assets/data/http-script.md"
     },
     {
       "id": 7,
       "title": "Http-Url",
       "slug": "http-url",
-      "logo": "./assets/http-url-shield.svg",
+      "logo": "/assets/http-url-shield.svg",
       "description": "Http-Url is an angular service to define urls and resolve them with or without parameters.",
       "namespace": "@ng-lab/http-url",
       "badge": "https://img.shields.io/npm/v/@ng-lab/http-url.svg",
       "href": "",
-      "md":"./assets/data/http-url.md"
+      "md":"/assets/data/http-url.md"
     },
     {
       "id": 8,
       "title": "Layout",
       "slug": "layout",
-      "logo": "./assets/layout-shield.svg",
+      "logo": "/assets/layout-shield.svg",
       "description": "Component to create flex container elements. Usefull for layout areas and many stuff (boxes, containers etc...)",
       "namespace": "@ng-lab/layout",
       "badge": "https://img.shields.io/npm/v/@ng-lab/layout.svg",
       "href": "",
-      "md":"./assets/data/layout.md"
+      "md":"/assets/data/layout.md"
     }
   ]
 }
