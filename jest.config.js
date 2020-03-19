@@ -7,6 +7,11 @@ module.exports = {
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageReporters: ['html', 'lcov'],
   globals: {
-    window: true
+    window: true,
+    'ts-jest': {
+      diagnostics: {
+        warnOnly: true
+      }
+    }
   }
 };

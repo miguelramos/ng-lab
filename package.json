@@ -33,7 +33,7 @@
     "build:http-url": "ng build http-url",
     "build:http-script": "ng build http-script",
     "build:layout": "ng build layout",
-    "test": "ng test",
+    "test": "ng test --coverage",
     "lint": "./node_modules/.bin/nx workspace-lint && ng lint",
     "e2e": "ng e2e",
     "affected:apps": "./node_modules/.bin/nx affected:apps",

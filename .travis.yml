@@ -33,13 +33,13 @@ jobs:
     - stage: testing
       script:
         - npm run test
-        - 'cat coverage/libs/configurator/lcov.info | node_modules/coveralls/bin/coveralls.js'
-        - 'cat coverage/libs/hub/lcov.info | node_modules/coveralls/bin/coveralls.js'
-        - 'cat coverage/libs/jwt/lcov.info | node_modules/coveralls/bin/coveralls.js'
-        - 'cat coverage/libs/responsive/lcov.info | node_modules/coveralls/bin/coveralls.js'
-        - 'cat coverage/libs/support/lcov.info | node_modules/coveralls/bin/coveralls.js'
-        - 'cat coverage/libs/http/url/lcov.info | node_modules/coveralls/bin/coveralls.js'
-        - 'cat coverage/libs/http/script/lcov.info | node_modules/coveralls/bin/coveralls.js'
+        #- 'cat coverage/libs/configurator/lcov.info | node_modules/coveralls/bin/coveralls.js'
+        #- 'cat coverage/libs/hub/lcov.info | node_modules/coveralls/bin/coveralls.js'
+        #- 'cat coverage/libs/jwt/lcov.info | node_modules/coveralls/bin/coveralls.js'
+        #- 'cat coverage/libs/responsive/lcov.info | node_modules/coveralls/bin/coveralls.js'
+        #- 'cat coverage/libs/support/lcov.info | node_modules/coveralls/bin/coveralls.js'
+        #- 'cat coverage/libs/http/url/lcov.info | node_modules/coveralls/bin/coveralls.js'
+        #- 'cat coverage/libs/http/script/lcov.info | node_modules/coveralls/bin/coveralls.js'
     - stage: building
       script: npm run build
     - stage: deploying
