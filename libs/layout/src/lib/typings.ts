@@ -13,3 +13,8 @@ export interface LayoutResizeSettings {
   edge: EdgeSide;
   color: string;
 }
+
+export interface LayoutExpandSettings {
+  collapseSize: number;
+  collapseWhenClickOutside: boolean;
+}

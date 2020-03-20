@@ -1,14 +1,14 @@
 import { async, TestBed } from '@angular/core/testing';
 import { LayoutModule } from './layout.module';
 
-describe('LayoutModule', () => {
+describe('> LayoutModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [LayoutModule]
     }).compileComponents();
   }));
 
-  it('should create', () => {
+  it('# Should have module defined.', () => {
     expect(LayoutModule).toBeDefined();
   });
 });
