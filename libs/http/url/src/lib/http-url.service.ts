@@ -98,7 +98,7 @@ export class HttpUrlService {
    * Setup regex routing and add it to Map.
    *
    * @param name Route name
-   * @para uri Url path
+   * @param uri Url path
    */
   protected setupRoute(name: string, uri: string): void {
     const verbal = new RegExp(/^@\w+\:/);

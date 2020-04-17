@@ -24,7 +24,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm run build:support && npm run build:configurator && npm run build:responsive && npm run build:hub && npm run build:jwt && npm run build:http-url && npm run build:http-script && npm run build:layout",
+    "build": "npm run build:support && npm run build:configurator && npm run build:responsive && npm run build:hub && npm run build:jwt && npm run build:http-url && npm run build:http-script && npm run build:layout && npm run build:journey",
     "build:support": "ng build support --prod",
     "build:configurator": "ng build configurator --prod",
     "build:responsive": "ng build responsive --prod",
@@ -33,6 +33,7 @@
     "build:http-url": "ng build http-url --prod",
     "build:http-script": "ng build http-script --prod",
     "build:layout": "ng build layout --prod",
+    "build:journey": "ng build journey --prod",
     "test": "ng test --codeCoverage",
     "lint": "./node_modules/.bin/nx workspace-lint && ng lint",
     "e2e": "ng e2e",

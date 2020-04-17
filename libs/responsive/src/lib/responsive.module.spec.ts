@@ -14,7 +14,7 @@ describe('> ResponsiveModule', () => {
   });
 
   it('# Should have ResponsiveBreakpointDirective on dependency injector.', () => {
-    const service = TestBed.get(ResponsiveBreakpointDirective, null);
+    const service = TestBed.inject(ResponsiveBreakpointDirective, null);
 
     expect(typeof service === 'object').toBeTruthy();
   });

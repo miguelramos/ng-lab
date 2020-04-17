@@ -19,4 +19,27 @@
   <section class="md-card">
     <markdown [src]="pkg.md"></markdown>
   </section>
+  <section class="md-card" *ngIf="pkg.id === 9">
+    <p>Your last 20 registered actions log example</p>
+    <ul>
+      <li *ngFor="let journey of journeyService.steps">
+        <p>Type: {{ journey.type }}</p>
+        <p>Time: {{ dateToString(journey.time) }}</p>
+        <p>Location: {{ journey.location}}</p>
+        <p>Data: {{ stringify(journey.data) }}</p>
+      </li>
+    </ul>
+    <hr>
+    <p>Meta info registered</p>
+    <ul>
+      <li>Final Time: {{ dateToString(journeyService.meta.endTime, false) }}</li>
+      <li>Geolocation: {{ stringify(journeyService.meta.geolocation) }}</li>
+      <li>Performance: {{ stringify(journeyService.meta.performance) }}</li>
+      <li>Screen Height: {{ journeyService.meta.screenHeight }}</li>
+      <li>Screen Width: {{ journeyService.meta.screenWidth }}</li>
+      <li>Start Time: {{ dateToString(journeyService.meta.startTime, false) }}</li>
+      <li>Start Url: {{ journeyService.meta.startUrl }}</li>
+      <li>User Agent: {{ journeyService.meta.userAgent }}</li>
+    </ul>
+  </section>
 </ng-container>

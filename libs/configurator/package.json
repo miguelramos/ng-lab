@@ -1,5 +1,5 @@
 {
-  "name": "@ng-lab/configurator",
+  "name": "@ng-lab/journey",
   "version": "0.0.0-PLACEHOLDER",
   "peerDependencies": {
     "@angular/common": "^7.1.0",
@@ -28,6 +28,6 @@
     "angular",
     "library",
     "ng-lab",
-    "configurator"
+    "journey"
   ]
 }

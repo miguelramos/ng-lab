@@ -1,3 +1,10 @@
+/**
+ * @license
+ * Copyright NgLab All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://www.ng-lab.com/license
+ */
 import { DOCUMENT } from '@angular/common';
 import {
   AfterViewInit,
@@ -25,10 +32,22 @@ export class LayoutResizerDirective
   };
 
   @Input()
-  resizeMinimalWidth = 0;
+  set resizeMinimalWidth(width: number) {
+    this.minimalWidth = width;
+  }
+
+  get resizeMinimalWidth(): number {
+    return this.minimalWidth;
+  }
 
   @Input()
-  resizeMinimalHeight = 0;
+  set resizeMinimalHeight(height: number) {
+    this.minimalHeight = height;
+  }
+
+  get resizeMinimalHeight(): number {
+    return this.minimalHeight;
+  }
 
   positionX: number;
 
@@ -43,6 +62,9 @@ export class LayoutResizerDirective
   private domListeners: Function[] = [];
 
   private edgeElement: HTMLDivElement;
+
+  private minimalWidth = 0;
+  private minimalHeight = 0;
 
   constructor(
     private readonly render: Renderer2,
