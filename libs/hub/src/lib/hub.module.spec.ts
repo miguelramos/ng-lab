@@ -15,7 +15,7 @@ describe('> HubModule', () => {
   });
 
   it('# Should have HubService on dependency injector.', () => {
-    const service = TestBed.get(HubService, null);
+    const service = TestBed.inject(HubService, null);
 
     expect(typeof service === 'object').toBeTruthy();
   });

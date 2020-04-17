@@ -1,3 +1,10 @@
+/**
+ * @license
+ * Copyright NgLab All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://www.ng-lab.com/license
+ */
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -8,8 +15,10 @@ import {
   Input,
   OnChanges,
   Renderer2,
-  SimpleChanges
+  SimpleChanges,
+  ContentChild
 } from '@angular/core';
+import { LayoutExpandDirective } from './layout-expand.directive';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -77,6 +86,9 @@ export class LayoutAreaComponent implements AfterViewInit, OnChanges {
   @Input()
   alignSelf: string;
 
+  @ContentChild(LayoutExpandDirective, { read: LayoutExpandDirective })
+  expandableDirective: LayoutExpandDirective;
+
   private element: HTMLElement;
 
   constructor(
@@ -93,6 +105,10 @@ export class LayoutAreaComponent implements AfterViewInit, OnChanges {
 
   ngAfterViewInit(): void {
     this.setupElementStyle();
+
+    if (this.expandableDirective) {
+      this.expandableDirective.uiLayoutExpandRef = this.element as any;
+    }
 
     this.cdr.markForCheck();
   }

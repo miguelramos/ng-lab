@@ -3,6 +3,7 @@ import { PackageState } from './state/packages.state';
 import { Observable } from 'rxjs';
 import { PackageModel } from './state/packages-model';
 import { Snippet } from '../../components/code/code-snipet';
+import { JourneyService } from '@ng-lab/journey';
 
 @Component({
   selector: 'ng-lab-packages',
@@ -12,6 +13,7 @@ import { Snippet } from '../../components/code/code-snipet';
 export class PackagesComponent implements OnInit {
 
   package$: Observable<PackageModel>;
+  stringify = JSON.stringify;
 
   configExample = Snippet({
     lang: 'typescript',
@@ -57,11 +59,18 @@ export class PackagesComponent implements OnInit {
   });
 
   constructor(
-    private readonly pkgState: PackageState
+    private readonly pkgState: PackageState,
+    public readonly journeyService: JourneyService
   ) { }
 
   ngOnInit(): void {
     this.package$ = this.pkgState.packages$;
+  }
+
+  dateToString(dateOrTime: any, time = true) {
+    const format = new Date(dateOrTime);
+
+    return time ? format.toLocaleTimeString('pt-PT') : format.toLocaleDateString('pt-PT');
   }
 
 }

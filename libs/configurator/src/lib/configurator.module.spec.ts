@@ -14,7 +14,7 @@ describe('> ConfiguratorModule', () => {
   });
 
   it('# Should have ConfiguratorService on dependency injector.', () => {
-    const service = TestBed.get(ConfiguratorService, null);
+    const service = TestBed.inject(ConfiguratorService, null);
 
     expect(typeof service === 'object').toBeTruthy();
   });

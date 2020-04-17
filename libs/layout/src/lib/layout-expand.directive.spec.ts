@@ -7,6 +7,7 @@ import { By } from '@angular/platform-browser';
   selector: 'ui-host-for-test',
   template: `
     <ui-layout-area
+      #reference
       display='flex'
       justifyContent='center'
       flexWrap='wrap'
@@ -21,17 +22,15 @@ import { By } from '@angular/platform-browser';
       flexShrink='3'
       order='1'
       alignSelf='center'
-      [uiLayoutExpandTrigger]="isOpen"
+      uiLayoutExpand
+      [isCollapsed]="isCollapsed"
       (collapseOutsideClick)="onCollapse($event)"
-      [uiLayoutExpand]="{
-        collapseSize: 50,
-        collapseWhenClickOutside: true
-      }"
+      [uiLayoutExpandRef]="reference"
     ></ui-layout-area>
   `
 })
 class HostComponent {
-  isOpen = true;
+  isCollapsed = false;
 
   onCollapse(event: any) {
     console.log(event);

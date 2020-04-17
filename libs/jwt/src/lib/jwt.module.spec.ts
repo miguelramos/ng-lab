@@ -14,7 +14,7 @@ describe('> JWTModule', () => {
   });
 
   it('# Should have JWTService on dependency injector.', () => {
-    const service = TestBed.get(JWTService, null);
+    const service = TestBed.inject(JWTService, null);
 
     expect(typeof service === 'object').toBeTruthy();
   });

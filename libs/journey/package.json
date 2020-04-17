@@ -4,7 +4,8 @@
   "peerDependencies": {
     "@angular/common": "^7.1.0",
     "@angular/core": "^7.1.0",
-    "lodash": "~4.17.11"
+    "lodash": "~4.17.11",
+    "@ng-lab/configurator": "0.0.0-PLACEHOLDER"
   },
   "publishConfig": {
     "access": "public"

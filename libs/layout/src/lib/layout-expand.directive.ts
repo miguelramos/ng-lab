@@ -1,3 +1,10 @@
+/**
+ * @license
+ * Copyright NgLab All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://www.ng-lab.com/license
+ */
 import { DOCUMENT } from '@angular/common';
 import {
   AfterViewChecked,
@@ -15,6 +22,7 @@ import {
 } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { LayoutExpandSettings } from './typings';
+import { isEmpty } from 'lodash';
 
 @Directive({
   selector: 'uiLayoutExpand, [uiLayoutExpand]'
@@ -22,13 +30,20 @@ import { LayoutExpandSettings } from './typings';
 export class LayoutExpandDirective implements AfterViewChecked, OnInit, OnDestroy {
 
   @Input()
-  uiLayoutExpand: LayoutExpandSettings = {
-    collapseSize: 50,
-    collapseWhenClickOutside: false
+  set uiLayoutExpand(options: LayoutExpandSettings) {
+    if(!isEmpty(options)) {
+      this.settings = options;
+    }
   };
+  get uiLayoutExpand() {
+    return this.settings;
+  }
 
   @Input()
-  uiLayoutExpandTrigger: boolean;
+  isCollapsed = false;
+
+  @Input()
+  uiLayoutExpandRef: HTMLBaseElement = null;
 
   @Output()
   collapseOutsideClick: EventEmitter<boolean> = new EventEmitter();
@@ -38,6 +53,11 @@ export class LayoutExpandDirective implements AfterViewChecked, OnInit, OnDestro
   private document: HTMLDocument;
 
   private domListeners: Function[] = [];
+
+  private settings = {
+    collapseSize: 50,
+    collapseWhenClickOutside: false
+  };
 
   constructor(
     private readonly render: Renderer2,
@@ -50,7 +70,7 @@ export class LayoutExpandDirective implements AfterViewChecked, OnInit, OnDestro
   }
 
   ngOnInit(): void {
-    this.render.setStyle(this.element, 'position', 'relative');
+    /*this.render.setStyle(this.element, 'position', 'relative');*/
 
     this.zone.runOutsideAngular(() => {
       const elDownListener = this.render.listen(
@@ -58,29 +78,31 @@ export class LayoutExpandDirective implements AfterViewChecked, OnInit, OnDestro
         'mouseup',
         (ev: MouseEvent) => {
           ev.preventDefault();
-          const target = ev.target as HTMLElement;
+          console.dir(this.uiLayoutExpandRef.clientWidth);
+          console.dir(this.uiLayoutExpandRef.clientHeight);
+          //this.render.setStyle(this.uiLayoutExpandRef, 'width', '50px');
+          /*const target = ev.target as HTMLElement;
 
           if (!this.element.contains(target)) {
             this.collapseOutsideClick.emit(true);
-            /*this.render.setStyle(this.element, 'display', 'none');
-            if (this.uiLayoutExpandTrigger === true) {
-              this.collapseOutsideClick.emit(false);
-            }*/
-          }
+
+          }*/
         }
       );
 
       this.domListeners.push(elDownListener);
     });
+
   }
 
   ngAfterViewChecked(): void {
-    if (this.uiLayoutExpandTrigger) {
+    /*if (this.uiLayoutExpandTrigger) {
       this.render.setStyle(this.element, 'width', 400 + 'px');
       this.render.setStyle(this.element, 'display', 'block');
     } else {
       this.render.setStyle(this.element, 'display', 'none');
-    }
+    }*/
+
   }
 
   ngOnDestroy(): void {

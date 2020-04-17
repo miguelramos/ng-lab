@@ -18,7 +18,10 @@
   [width]="'300px'"
   class="ui-sidebar"
   [uiLayoutResizer]="edgeSettings"
+  [resizeMinimalWidth]="150"
+  #sidebarReferece
 >
+  <span style="position: absolute; top: 0; right: 0; width: 20px; height: 20px;" uiLayoutExpand [uiLayoutExpandRef]="sidebarReferece">1</span>
   <header class="ui-sidebar__header">
     <h3 class="ui-sidebar__title">Packages</h3>
   </header>
@@ -47,6 +50,9 @@
       </li>
       <li>
         <a>Support</a>
+      </li>
+      <li>
+        <a>Journey</a>
       </li>
     </ul>
   </nav>

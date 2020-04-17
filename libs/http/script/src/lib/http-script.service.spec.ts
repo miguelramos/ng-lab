@@ -29,7 +29,7 @@ describe('> HttpScriptLoaderService', () => {
       ]
     }).compileComponents();
 
-    httpScriptService = TestBed.get(HttpScriptLoaderService, 'NOT FOUND');
+    httpScriptService = TestBed.inject(HttpScriptLoaderService);
   });
 
   it('# Should have register scripts', () => {
