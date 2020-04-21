@@ -87,6 +87,17 @@
       "badge": "https://img.shields.io/npm/v/@ng-lab/layout.svg",
       "href": "",
       "md":"/assets/data/layout.md"
+    },
+    {
+      "id": 9,
+      "title": "Journey",
+      "slug": "journey",
+      "logo": "./assets/journey-shield.svg",
+      "description": "Service to log user interaction and request interceptor. Register scroll, click, performance, gps",
+      "namespace": "@ng-lab/journey",
+      "badge": "https://img.shields.io/npm/v/@ng-lab/journey.svg",
+      "href": "",
+      "md":"/assets/data/journey.md"
     }
   ]
 }

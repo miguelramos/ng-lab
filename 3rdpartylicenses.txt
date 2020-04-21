@@ -44,6 +44,9 @@ MIT
 @ng-lab/http-url
 MIT
 
+@ng-lab/journey
+MIT
+
 @ng-lab/layout
 MIT
 
