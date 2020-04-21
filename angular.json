@@ -489,6 +489,18 @@
       "sourceRoot": "libs/journey/src",
       "prefix": "ui",
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/journey/tsconfig.lib.json",
+            "project": "libs/journey/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/journey/tsconfig.lib.prod.json"
+            }
+          }
+        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
