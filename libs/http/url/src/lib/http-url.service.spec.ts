@@ -32,7 +32,7 @@ describe('> HttpUrlService', () => {
       imports: [ConfiguratorModule.forRoot(config), HttpUrlModule]
     }).compileComponents();
 
-    httpUrlService = TestBed.get(HttpUrlService, 'NOT FOUND');
+    httpUrlService = TestBed.inject(HttpUrlService);
   });
 
   it('# Should get defined urls', () => {

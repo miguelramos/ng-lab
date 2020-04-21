@@ -1,13 +1,17 @@
+/**
+ * @license
+ * Copyright NgLab All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://www.ng-lab.com/license
+ */
 import { DOCUMENT } from '@angular/common';
 import {
-  AfterViewChecked,
-  AfterViewInit,
   Directive,
   ElementRef,
   Inject,
   Input,
   NgZone,
-  OnChanges,
   OnDestroy,
   OnInit,
   Output,
@@ -15,20 +19,28 @@ import {
 } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { LayoutExpandSettings } from './typings';
+import { isEmpty } from 'lodash';
 
 @Directive({
   selector: 'uiLayoutExpand, [uiLayoutExpand]'
 })
-export class LayoutExpandDirective implements AfterViewChecked, OnInit, OnDestroy {
+export class LayoutExpandDirective implements OnInit, OnDestroy {
 
   @Input()
-  uiLayoutExpand: LayoutExpandSettings = {
-    collapseSize: 50,
-    collapseWhenClickOutside: false
+  set uiLayoutExpand(options: LayoutExpandSettings) {
+    if(!isEmpty(options)) {
+      this.settings = options;
+    }
   };
+  get uiLayoutExpand() {
+    return this.settings;
+  }
 
   @Input()
-  uiLayoutExpandTrigger: boolean;
+  isCollapsed = false;
+
+  @Input()
+  uiLayoutExpandRef: HTMLBaseElement;
 
   @Output()
   collapseOutsideClick: EventEmitter<boolean> = new EventEmitter();
@@ -38,6 +50,11 @@ export class LayoutExpandDirective implements AfterViewChecked, OnInit, OnDestro
   private document: HTMLDocument;
 
   private domListeners: Function[] = [];
+
+  private settings = {
+    collapseSize: 50,
+    collapseWhenClickOutside: false
+  };
 
   constructor(
     private readonly render: Renderer2,
@@ -50,37 +67,51 @@ export class LayoutExpandDirective implements AfterViewChecked, OnInit, OnDestro
   }
 
   ngOnInit(): void {
-    this.render.setStyle(this.element, 'position', 'relative');
+    /*this.render.setStyle(this.element, 'position', 'relative');*/
+    let originalWidth = 0;
 
     this.zone.runOutsideAngular(() => {
-      const elDownListener = this.render.listen(
+      const documentListener = this.render.listen(
         this.document,
         'mouseup',
         (ev: MouseEvent) => {
           ev.preventDefault();
-          const target = ev.target as HTMLElement;
 
-          if (!this.element.contains(target)) {
+          if (!this.uiLayoutExpandRef.contains(ev.target as HTMLBaseElement) && this.settings.collapseWhenClickOutside) {
+            if (originalWidth === 0) {
+              originalWidth = this.uiLayoutExpandRef.clientWidth;
+            }
+
+            this.render.setStyle(this.uiLayoutExpandRef, 'width', `${this.settings.collapseSize}px`);
+            this.isCollapsed = true;
+
             this.collapseOutsideClick.emit(true);
-            /*this.render.setStyle(this.element, 'display', 'none');
-            if (this.uiLayoutExpandTrigger === true) {
-              this.collapseOutsideClick.emit(false);
-            }*/
           }
         }
       );
 
-      this.domListeners.push(elDownListener);
-    });
-  }
+      const elementListener = this.render.listen(this.element, 'click', (ev: MouseEvent) => {
+        ev.preventDefault();
 
-  ngAfterViewChecked(): void {
-    if (this.uiLayoutExpandTrigger) {
-      this.render.setStyle(this.element, 'width', 400 + 'px');
-      this.render.setStyle(this.element, 'display', 'block');
-    } else {
-      this.render.setStyle(this.element, 'display', 'none');
-    }
+        if (originalWidth === 0) {
+          originalWidth = this.uiLayoutExpandRef.clientWidth;
+        }
+
+        if (!this.isCollapsed) {
+          this.render.setStyle(this.uiLayoutExpandRef, 'width', `${this.settings.collapseSize}px`);
+          this.isCollapsed = true;
+          this.collapseOutsideClick.emit(true);
+        } else {
+          this.render.setStyle(this.uiLayoutExpandRef, 'width', `${originalWidth}px`);
+          this.isCollapsed = false;
+          originalWidth = 0;
+          this.collapseOutsideClick.emit(false);
+        }
+      });
+
+      this.domListeners.push(elementListener);
+      this.domListeners.push(documentListener);
+    });
   }
 
   ngOnDestroy(): void {

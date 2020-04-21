@@ -41,6 +41,7 @@ First check each package describe or just navigate to demo app for more informat
 | @ng-lab/http-url     | Service to define/get routes for http services      | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/http-url.svg?color=green&style=flat)     |
 | @ng-lab/http-script  | Service to load scripts and define them on body     | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/http-script.svg?color=green&style=flat)  |
 | @ng-lab/layout       | Create flexbox areas for any layout type            | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/layout.svg?color=green&style=flat)       |
+| @ng-lab/journey      | Log user journey thru your app                      | ![npm (scoped)](https://img.shields.io/npm/v/@ng-lab/journey.svg?color=green&style=flat)      |
 
 #### For Development
 

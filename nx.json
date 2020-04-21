@@ -38,6 +38,9 @@
     },
     "layout": {
       "tags": ["scope:lib"]
+    },
+    "journey": {
+      "tags": ["scope:lib"]
     }
   }
 }

@@ -482,6 +482,50 @@
           "styleext": "scss"
         }
       }
+    },
+    "journey": {
+      "projectType": "library",
+      "root": "libs/journey",
+      "sourceRoot": "libs/journey/src",
+      "prefix": "ui",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/journey/tsconfig.lib.json",
+            "project": "libs/journey/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/journey/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/journey/tsconfig.lib.json",
+              "libs/journey/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/journey/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/journey/jest.config.js",
+            "tsConfig": "libs/journey/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/journey/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

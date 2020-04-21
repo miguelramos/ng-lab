@@ -21,7 +21,8 @@
       "@ng-lab/http/url": ["libs/http/url/src/index.ts"],
       "@ng-lab/http/script": ["libs/http/script/src/index.ts"],
       "@ng-lab/layout": ["libs/layout/src/index.ts"],
-      "@ng-lab/app/*": ["apps/ng-lab-demo/src/*"]
+      "@ng-lab/app/*": ["apps/ng-lab-demo/src/*"],
+      "@ng-lab/journey": ["libs/journey/src/index.ts"]
     },
     "rootDir": "."
   },

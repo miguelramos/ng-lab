@@ -6,13 +6,12 @@
  * found in the LICENSE file at https://www.ng-lab.com/license
  */
 import { InjectionToken } from '@angular/core';
+import { TrackingOptions } from './journey.typings';
 
-import { ScriptInterface } from './http-script.typing';
-
-export const SCRIPTS_LOADER = new InjectionToken<ScriptInterface>(
-  '[SCRIPTS] Scripts loader token',
-  {
-    providedIn: 'root',
-    factory: () => [] as any
-  }
+export const JOURNEY_TOKEN = new InjectionToken<boolean | TrackingOptions>(
+  '[JOURNEY] Journey initializer.'
 );
+
+export const JOURNEY_DEFAULT_OPTIONS: TrackingOptions = {
+  interaction: true
+};

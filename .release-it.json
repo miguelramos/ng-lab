@@ -25,7 +25,8 @@
       "dist/libs/support/*.tgz",
       "dist/libs/http-url/*.tgz",
       "dist/libs/http-script/*.tgz",
-      "dist/libs/layout/*.tgz"
+      "dist/libs/layout/*.tgz",
+      "dist/libs/journey/*.tgz"
     ]
   },
   "npm": {
