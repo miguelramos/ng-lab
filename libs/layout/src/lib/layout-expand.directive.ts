@@ -7,14 +7,11 @@
  */
 import { DOCUMENT } from '@angular/common';
 import {
-  AfterViewChecked,
-  AfterViewInit,
   Directive,
   ElementRef,
   Inject,
   Input,
   NgZone,
-  OnChanges,
   OnDestroy,
   OnInit,
   Output,
@@ -27,7 +24,7 @@ import { isEmpty } from 'lodash';
 @Directive({
   selector: 'uiLayoutExpand, [uiLayoutExpand]'
 })
-export class LayoutExpandDirective implements AfterViewChecked, OnInit, OnDestroy {
+export class LayoutExpandDirective implements OnInit, OnDestroy {
 
   @Input()
   set uiLayoutExpand(options: LayoutExpandSettings) {
@@ -43,7 +40,7 @@ export class LayoutExpandDirective implements AfterViewChecked, OnInit, OnDestro
   isCollapsed = false;
 
   @Input()
-  uiLayoutExpandRef: HTMLBaseElement = null;
+  uiLayoutExpandRef: HTMLBaseElement;
 
   @Output()
   collapseOutsideClick: EventEmitter<boolean> = new EventEmitter();
@@ -71,38 +68,50 @@ export class LayoutExpandDirective implements AfterViewChecked, OnInit, OnDestro
 
   ngOnInit(): void {
     /*this.render.setStyle(this.element, 'position', 'relative');*/
+    let originalWidth = 0;
 
     this.zone.runOutsideAngular(() => {
-      const elDownListener = this.render.listen(
+      const documentListener = this.render.listen(
         this.document,
         'mouseup',
         (ev: MouseEvent) => {
           ev.preventDefault();
-          console.dir(this.uiLayoutExpandRef.clientWidth);
-          console.dir(this.uiLayoutExpandRef.clientHeight);
-          //this.render.setStyle(this.uiLayoutExpandRef, 'width', '50px');
-          /*const target = ev.target as HTMLElement;
 
-          if (!this.element.contains(target)) {
+          if (!this.uiLayoutExpandRef.contains(ev.target as HTMLBaseElement) && this.settings.collapseWhenClickOutside) {
+            if (originalWidth === 0) {
+              originalWidth = this.uiLayoutExpandRef.clientWidth;
+            }
+
+            this.render.setStyle(this.uiLayoutExpandRef, 'width', `${this.settings.collapseSize}px`);
+            this.isCollapsed = true;
+
             this.collapseOutsideClick.emit(true);
-
-          }*/
+          }
         }
       );
 
-      this.domListeners.push(elDownListener);
+      const elementListener = this.render.listen(this.element, 'click', (ev: MouseEvent) => {
+        ev.preventDefault();
+
+        if (originalWidth === 0) {
+          originalWidth = this.uiLayoutExpandRef.clientWidth;
+        }
+
+        if (!this.isCollapsed) {
+          this.render.setStyle(this.uiLayoutExpandRef, 'width', `${this.settings.collapseSize}px`);
+          this.isCollapsed = true;
+          this.collapseOutsideClick.emit(true);
+        } else {
+          this.render.setStyle(this.uiLayoutExpandRef, 'width', `${originalWidth}px`);
+          this.isCollapsed = false;
+          originalWidth = 0;
+          this.collapseOutsideClick.emit(false);
+        }
+      });
+
+      this.domListeners.push(elementListener);
+      this.domListeners.push(documentListener);
     });
-
-  }
-
-  ngAfterViewChecked(): void {
-    /*if (this.uiLayoutExpandTrigger) {
-      this.render.setStyle(this.element, 'width', 400 + 'px');
-      this.render.setStyle(this.element, 'display', 'block');
-    } else {
-      this.render.setStyle(this.element, 'display', 'none');
-    }*/
-
   }
 
   ngOnDestroy(): void {

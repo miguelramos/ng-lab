@@ -21,11 +21,11 @@
   [resizeMinimalWidth]="150"
   #sidebarReferece
 >
-  <span style="position: absolute; top: 0; right: 0; width: 20px; height: 20px;" uiLayoutExpand [uiLayoutExpandRef]="sidebarReferece">1</span>
-  <header class="ui-sidebar__header">
+  <span style="position: absolute; top: 0; right: 0; height: 20px; cursor: pointer; font-size: small;" uiLayoutExpand (collapseOutsideClick)="whenCollapse($event)" >Experimental(WIP)</span>
+  <header class="ui-sidebar__header" *ngIf="sidebarVisible">
     <h3 class="ui-sidebar__title">Packages</h3>
   </header>
-  <nav class="ui-sidebar__nav">
+  <nav class="ui-sidebar__nav" *ngIf="sidebarVisible">
     <ul>
       <li>
         <a>Configurator</a>

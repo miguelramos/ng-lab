@@ -43,12 +43,18 @@ export class AppComponent implements OnInit {
 
   responsive$: Observable<ResponsiveChangeInterface>;
 
+  sidebarVisible = true;
+
   constructor(
     private router: Router
   ) {}
 
   public handlerResponsiveChange(change: ResponsiveChangeInterface): void {
     this.responsive$ = of(change);
+  }
+
+  public whenCollapse(visible: boolean) {
+    this.sidebarVisible = !visible;
   }
 
   ngOnInit() {
