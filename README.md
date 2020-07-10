@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./apps/ng-lab-demo/src/assets/ng-logo.svg"><br/>
+  <img src="./apps/ng-lab-demo/src/assets/angular.svg"><br/>
   <img src="./apps/ng-lab-demo/src/assets/lab-logo.svg">
 
 #
