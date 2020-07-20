@@ -33,6 +33,7 @@ jobs:
     - stage: testing
       script:
         - npm run test
+      after_success:
         - 'cat coverage/libs/configurator/lcov.info | node_modules/coveralls/bin/coveralls.js'
         - 'cat coverage/libs/hub/lcov.info | node_modules/coveralls/bin/coveralls.js'
         - 'cat coverage/libs/jwt/lcov.info | node_modules/coveralls/bin/coveralls.js'
